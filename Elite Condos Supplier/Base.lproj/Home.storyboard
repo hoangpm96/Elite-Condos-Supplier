@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vxo-q2-hKz">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+        <array key="Ubuntu-Light.ttf">
+            <string>Ubuntu-Light</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Đơn hàng-->
+        <scene sceneID="d9Y-Q1-gfE">
+            <objects>
+                <viewController id="0WK-ou-HdK" customClass="HomeVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Xl-zM-hRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ze0-3c-bNt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k13-V5-k2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-29-Jhn">
+                                <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-sD-G5l">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc4-H6-jsj">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                <color key="backgroundColor" red="0.30588235289999999" green="0.69019607839999997" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <state key="normal" title="Đang diễn ra">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ongoingBtn:" destination="0WK-ou-HdK" eventType="touchUpInside" id="v69-VX-krr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKi-cS-l4X">
+                                                <rect key="frame" x="110" y="0.0" width="100" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.35440495640000003" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <state key="normal" title="Bị hủy">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelBtn:" destination="0WK-ou-HdK" eventType="touchUpInside" id="5ae-ce-nhc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGE-NM-d4L">
+                                                <rect key="frame" x="220" y="0.0" width="100" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.82953090953703701" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <state key="normal" title="Hoàn thành">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="finishBtn:" destination="0WK-ou-HdK" eventType="touchUpInside" id="sYg-ix-Xh1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Qen-sD-G5l" secondAttribute="bottom" constant="10" id="CiD-CZ-Y9D"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qen-sD-G5l" secondAttribute="trailing" id="SQj-33-1Ar"/>
+                                    <constraint firstItem="Qen-sD-G5l" firstAttribute="top" secondItem="HP8-29-Jhn" secondAttribute="top" constant="10" id="VUe-4B-KvQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="fK7-k1-HAJ"/>
+                                    <constraint firstItem="Qen-sD-G5l" firstAttribute="leading" secondItem="HP8-29-Jhn" secondAttribute="leading" id="fXI-vE-yVo"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-5y-cJ2">
+                                <rect key="frame" x="0.0" y="124" width="320" height="356"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Supplier_OrderCell" rowHeight="134" id="fLc-dl-c5U" customClass="Supplier_OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="134"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLc-dl-c5U" id="2jz-Lh-adf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="khoa" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-RX-4zD" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="37" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="1L4-k8-xQN"/>
+                                                        <constraint firstAttribute="width" constant="60" id="6w0-xh-qod"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Thị My" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-SP-e5D">
+                                                    <rect key="frame" x="70" y="32" width="180" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="Kuk-uL-nPt"/>
+                                                        <constraint firstAttribute="height" constant="20" id="W5H-ar-JUh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55/1, đường 138, khu phố 2, Tân Phú, quận 9, Hồ Chí Minh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-Nt-hc9">
+                                                    <rect key="frame" x="70" y="56" width="180" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="OLu-hk-i2J"/>
+                                                        <constraint firstAttribute="height" constant="42" id="PVJ-dC-5sb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="techician" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Xc-c8G" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                    <rect key="frame" x="252" y="37" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="pqe-a2-dg9"/>
+                                                        <constraint firstAttribute="height" constant="60" id="vte-zE-aoY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 2, 2016 at 8:00:47 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf7-88-fpZ">
+                                                    <rect key="frame" x="35" y="2" width="250" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="Wpz-Wg-ha9"/>
+                                                        <constraint firstAttribute="height" constant="20" id="cf9-sy-blF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vLXogfAmFYrhmfBN4P9q" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9Q-tx-Min">
+                                                    <rect key="frame" x="8" y="103" width="250" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WjC-ty-zfP"/>
+                                                        <constraint firstAttribute="width" constant="250" id="XbQ-qJ-EMn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vhl-Xc-c8G" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" id="71r-ow-sh6"/>
+                                                <constraint firstItem="5nw-SP-e5D" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="-25" id="9nK-aP-hCb"/>
+                                                <constraint firstItem="Vf7-88-fpZ" firstAttribute="top" secondItem="2jz-Lh-adf" secondAttribute="top" constant="2" id="F9B-f6-n1g"/>
+                                                <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="FDz-b0-xrS"/>
+                                                <constraint firstItem="B9Q-tx-Min" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="JJS-jV-5Cs"/>
+                                                <constraint firstItem="T0Z-RX-4zD" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" id="Jw3-RT-R0a"/>
+                                                <constraint firstItem="B9Q-tx-Min" firstAttribute="top" secondItem="QEI-Nt-hc9" secondAttribute="bottom" constant="5" id="KfV-Qs-ecz"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vhl-Xc-c8G" secondAttribute="trailing" constant="8" id="Wnv-tU-bSq"/>
+                                                <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="10" id="gPw-e9-s4o"/>
+                                                <constraint firstItem="Vf7-88-fpZ" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="hWg-QP-dlm"/>
+                                                <constraint firstItem="T0Z-RX-4zD" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="mJQ-gv-GiY"/>
+                                                <constraint firstItem="5nw-SP-e5D" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="muP-zF-lFg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="customerAddressLbl" destination="QEI-Nt-hc9" id="cLp-K0-ntx"/>
+                                            <outlet property="customerAvatarImg" destination="T0Z-RX-4zD" id="px4-Rq-R20"/>
+                                            <outlet property="customerNameLbl" destination="5nw-SP-e5D" id="ZxX-7c-xeU"/>
+                                            <outlet property="employeeAvatarImg" destination="Vhl-Xc-c8G" id="9bV-HX-bj9"/>
+                                            <outlet property="orderIdLbl" destination="B9Q-tx-Min" id="1l9-be-enj"/>
+                                            <outlet property="timeLbl" destination="Vf7-88-fpZ" id="jKV-xM-Suu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiện tại không có đơn hàng nào" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-qm-BSi">
+                                <rect key="frame" x="0.0" y="218.5" width="320" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="2Bc-gk-ddG"/>
+                                    <constraint firstAttribute="height" constant="43" id="wGV-DQ-wWc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BEc-5y-cJ2" firstAttribute="leading" secondItem="k13-V5-k2g" secondAttribute="leading" id="FVI-yg-HU9"/>
+                            <constraint firstItem="t5m-qm-BSi" firstAttribute="centerY" secondItem="k13-V5-k2g" secondAttribute="centerY" id="Pba-UW-Zh7"/>
+                            <constraint firstItem="HP8-29-Jhn" firstAttribute="leading" secondItem="k13-V5-k2g" secondAttribute="leading" id="QDP-Uc-DAl"/>
+                            <constraint firstAttribute="trailing" secondItem="BEc-5y-cJ2" secondAttribute="trailing" id="fyw-sV-4ff"/>
+                            <constraint firstItem="t5m-qm-BSi" firstAttribute="centerX" secondItem="k13-V5-k2g" secondAttribute="centerX" id="gQI-d7-k2g"/>
+                            <constraint firstItem="BEc-5y-cJ2" firstAttribute="top" secondItem="HP8-29-Jhn" secondAttribute="bottom" id="lkj-DH-8cB"/>
+                            <constraint firstAttribute="trailing" secondItem="HP8-29-Jhn" secondAttribute="trailing" id="on0-Rx-s2w"/>
+                            <constraint firstItem="HP8-29-Jhn" firstAttribute="top" secondItem="0Xl-zM-hRb" secondAttribute="bottom" id="qhj-En-KiV"/>
+                            <constraint firstItem="Ze0-3c-bNt" firstAttribute="top" secondItem="BEc-5y-cJ2" secondAttribute="bottom" id="vJR-cS-IXp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Đơn hàng" id="DjD-M9-R7B">
+                        <barButtonItem key="leftBarButtonItem" image="icon_menu_24dp" id="sdf-jC-EYo"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBarButton" destination="sdf-jC-EYo" id="d9j-2d-3pi"/>
+                        <outlet property="noOrderLbl" destination="t5m-qm-BSi" id="Wol-uw-BwH"/>
+                        <outlet property="tableView" destination="BEc-5y-cJ2" id="AqJ-C1-RZX"/>
+                        <segue destination="bxP-wt-H9i" kind="show" identifier="PickEmployeeVC" id="rYH-kS-isS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-bI-9xF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3188" y="2149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oO5-KX-UZR">
+            <objects>
+                <navigationController storyboardIdentifier="HomeID" automaticallyAdjustsScrollViewInsets="NO" id="vxo-q2-hKz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ogl-Qg-z9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0WK-ou-HdK" kind="relationship" relationship="rootViewController" id="y9w-0v-B5I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gow-Et-vKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3947" y="2149"/>
+        </scene>
+        <!--Quản Lý Nhân Viên-->
+        <scene sceneID="LDg-qZ-dbn">
+            <objects>
+                <viewController id="bxP-wt-H9i" customClass="PickEmployeeVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YJW-Co-Vkv"/>
+                        <viewControllerLayoutGuide type="bottom" id="IaE-6R-v2j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qlc-c8-PFp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBb-4g-tDN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell2" rowHeight="124" id="NdQ-kC-t8a" customClass="EmployeeCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="124"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdQ-kC-t8a" id="50I-B2-C91">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nhanvien1" translatesAutoresizingMaskIntoConstraints="NO" id="sze-bs-NsP" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="26" width="72" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="GC2-ma-UUh"/>
+                                                        <constraint firstAttribute="width" constant="72" id="X7D-pn-4Rc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-Cy-DS9">
+                                                    <rect key="frame" x="97" y="26" width="180" height="72"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Văn Khoa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxk-x2-2YS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
+                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01647778182" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5P-I1-6L3">
+                                                            <rect key="frame" x="0.0" y="38" width="180" height="34"/>
+                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="UUH-rl-jN1"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sze-bs-NsP" firstAttribute="centerY" secondItem="50I-B2-C91" secondAttribute="centerY" id="Id5-g5-EDW"/>
+                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="height" secondItem="sze-bs-NsP" secondAttribute="height" id="JPL-Bm-9Oi"/>
+                                                <constraint firstItem="sze-bs-NsP" firstAttribute="leading" secondItem="50I-B2-C91" secondAttribute="leading" constant="10" id="gSo-m8-Sov"/>
+                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="centerY" secondItem="sze-bs-NsP" secondAttribute="centerY" id="rbZ-NZ-zU6"/>
+                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="leading" secondItem="sze-bs-NsP" secondAttribute="trailing" constant="15" id="sxg-bi-xBu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImage" destination="sze-bs-NsP" id="6vY-3G-Znm"/>
+                                            <outlet property="nameLbl" destination="uxk-x2-2YS" id="A37-77-cQH"/>
+                                            <outlet property="phoneLbl" destination="X5P-I1-6L3" id="BRN-fR-4xB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rBb-4g-tDN" secondAttribute="trailing" id="TgZ-Zv-8lp"/>
+                            <constraint firstItem="rBb-4g-tDN" firstAttribute="top" secondItem="qlc-c8-PFp" secondAttribute="top" id="bn8-ft-r9a"/>
+                            <constraint firstItem="rBb-4g-tDN" firstAttribute="leading" secondItem="qlc-c8-PFp" secondAttribute="leading" id="qjC-nh-J83"/>
+                            <constraint firstItem="IaE-6R-v2j" firstAttribute="top" secondItem="rBb-4g-tDN" secondAttribute="bottom" id="t1k-hG-AiT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quản Lý Nhân Viên" id="RLg-TK-Jtt"/>
+                    <connections>
+                        <outlet property="tableView" destination="rBb-4g-tDN" id="63g-e5-u2w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iub-dr-wW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3189" y="2949"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_menu_24dp" width="24" height="24"/>
+        <image name="khoa" width="720" height="720"/>
+        <image name="nhanvien1" width="1632" height="2048"/>
+        <image name="techician" width="350" height="251"/>
+    </resources>
+</document>

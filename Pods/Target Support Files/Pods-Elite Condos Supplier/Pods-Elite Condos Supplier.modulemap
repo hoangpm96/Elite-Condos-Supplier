@@ -1,0 +1,6 @@
+framework module Pods_Elite_Condos_Supplier {
+  umbrella header "Pods-Elite Condos Supplier-umbrella.h"
+
+  export *
+  module * { export * }
+}

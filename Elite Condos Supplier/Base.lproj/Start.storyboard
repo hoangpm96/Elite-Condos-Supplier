@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+        <array key="Ubuntu-Light.ttf">
+            <string>Ubuntu-Light</string>
+        </array>
+        <array key="Ubuntu-LightItalic.ttf">
+            <string>Ubuntu-LightItalic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--StartVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="StartVC" id="BYZ-38-t0r" customClass="StartVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L61-e2-j5Z">
+                                <rect key="frame" x="0.0" y="440" width="320" height="40"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.76078431369999999" blue="0.12791053916666664" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Aj-KQ-Ue7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="17"/>
+                                <state key="normal" title="Đăng Nhập">
+                                    <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="loa-hG-2sV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elite Condos Supplier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCa-6S-8yI">
+                                <rect key="frame" x="10" y="100" width="300" height="31.5"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
+                                <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We care your homes!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-IQ-sRM">
+                                <rect key="frame" x="77" y="161" width="166" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="7qC-pi-SvJ"/>
+                                    <constraint firstAttribute="width" constant="166" id="SAB-Tt-56b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-LightItalic" family="Ubuntu" pointSize="17"/>
+                                <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-ih-vN8">
+                                <rect key="frame" x="0.0" y="396" width="320" height="40"/>
+                                <color key="backgroundColor" red="0.8901960784313725" green="0.28235294117647058" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DHA-bu-TVU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="17"/>
+                                <state key="normal" title="Đăng Ký">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTT-au-OG4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_home_logo" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-dD-svc">
+                                <rect key="frame" x="26.5" y="212" width="267" height="160"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.12941176470588234" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lGa-dD-svc" firstAttribute="top" secondItem="PWn-IQ-sRM" secondAttribute="bottom" constant="20" id="CkQ-wD-Y5P"/>
+                            <constraint firstAttribute="trailing" secondItem="L61-e2-j5Z" secondAttribute="trailing" id="DQX-Zh-pkN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L61-e2-j5Z" secondAttribute="bottom" id="KKk-7D-TXs"/>
+                            <constraint firstItem="VCa-6S-8yI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="OS3-ac-8GL"/>
+                            <constraint firstItem="lGa-dD-svc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="5:6" id="Qph-7X-yAd"/>
+                            <constraint firstItem="PWn-IQ-sRM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V5N-tE-Oj5"/>
+                            <constraint firstItem="L61-e2-j5Z" firstAttribute="top" secondItem="bdK-ih-vN8" secondAttribute="bottom" constant="4" id="aro-S7-keU"/>
+                            <constraint firstItem="bdK-ih-vN8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mMd-jL-reC"/>
+                            <constraint firstItem="L61-e2-j5Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="otr-x0-oi0"/>
+                            <constraint firstItem="lGa-dD-svc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pR5-FV-45h"/>
+                            <constraint firstAttribute="trailing" secondItem="bdK-ih-vN8" secondAttribute="trailing" id="pc9-4t-3Ml"/>
+                            <constraint firstAttribute="trailing" secondItem="VCa-6S-8yI" secondAttribute="trailing" constant="10" id="tVL-sU-dne"/>
+                            <constraint firstItem="PWn-IQ-sRM" firstAttribute="top" secondItem="VCa-6S-8yI" secondAttribute="bottom" constant="30" id="uT0-GO-PIM"/>
+                            <constraint firstItem="lGa-dD-svc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="vsO-ew-UOm"/>
+                            <constraint firstItem="VCa-6S-8yI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="wcN-1Q-2yz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="wvE-nX-e3Y" kind="show" identifier="SupplierSignIn" action="showDetailViewController:sender:" id="H9T-WK-B9e"/>
+                        <segue destination="rUY-W2-Uul" kind="showDetail" identifier="SupplierSignUp" action="showViewController:sender:" id="q76-ch-NDK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-724" y="-2938"/>
+        </scene>
+        <!--Đăng Nhập-->
+        <scene sceneID="zJP-Xc-WlV">
+            <objects>
+                <viewController id="TNd-3I-YEX" customClass="LoginVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BiD-C3-Io4"/>
+                        <viewControllerLayoutGuide type="bottom" id="3cd-nN-AvQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zu9-29-mki">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P19-m0-Ye5">
+                                <rect key="frame" x="40" y="130" width="240" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-0m-nOx" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="DPu-C0-txD"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-sj-EaZ" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="240" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="0Q7-Qm-GVb"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="TNd-3I-YEX" id="4FX-6Y-zRF"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6d0-LY-yxu"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Viy-Hq-C8A" customClass="FancyBtn" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                <rect key="frame" x="40" y="274" width="240" height="40"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.76078431369999999" blue="0.12791053920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="amK-0J-EVT"/>
+                                </constraints>
+                                <state key="normal" title="Đăng Nhập">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="TNd-3I-YEX" eventType="touchUpInside" id="kj2-vR-Uzv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3q-Cw-Pc8">
+                                <rect key="frame" x="0.0" y="450" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PQh-aC-rte"/>
+                                </constraints>
+                                <state key="normal" title="Chưa có tài khoản? Đăng ký ngay"/>
+                                <connections>
+                                    <segue destination="rUY-W2-Uul" kind="show" id="EYc-ke-SmI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P19-m0-Ye5" firstAttribute="leading" secondItem="Zu9-29-mki" secondAttribute="leading" constant="40" id="4eE-Pn-wkI"/>
+                            <constraint firstAttribute="trailing" secondItem="Viy-Hq-C8A" secondAttribute="trailing" constant="40" id="TfP-5N-wUx"/>
+                            <constraint firstAttribute="trailing" secondItem="i3q-Cw-Pc8" secondAttribute="trailing" id="ULs-uY-kmL"/>
+                            <constraint firstItem="Viy-Hq-C8A" firstAttribute="top" secondItem="P19-m0-Ye5" secondAttribute="bottom" constant="44" id="ZKR-xU-3Hb"/>
+                            <constraint firstItem="i3q-Cw-Pc8" firstAttribute="leading" secondItem="Zu9-29-mki" secondAttribute="leading" id="hlA-wq-h2R"/>
+                            <constraint firstItem="P19-m0-Ye5" firstAttribute="centerX" secondItem="Zu9-29-mki" secondAttribute="centerX" id="kgs-db-R2a"/>
+                            <constraint firstItem="3cd-nN-AvQ" firstAttribute="top" secondItem="i3q-Cw-Pc8" secondAttribute="bottom" id="lPg-mL-uu7"/>
+                            <constraint firstItem="P19-m0-Ye5" firstAttribute="centerY" secondItem="Zu9-29-mki" secondAttribute="centerY" constant="-60" id="nCm-58-RnA"/>
+                            <constraint firstItem="Viy-Hq-C8A" firstAttribute="leading" secondItem="Zu9-29-mki" secondAttribute="leading" constant="40" id="nFT-5e-bVc"/>
+                            <constraint firstAttribute="trailing" secondItem="P19-m0-Ye5" secondAttribute="trailing" constant="40" id="u0h-fC-j17"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Đăng Nhập" id="46o-CV-QM3">
+                        <barButtonItem key="leftBarButtonItem" image="left-arrow" id="m5u-49-2Y4">
+                            <connections>
+                                <action selector="backBtn:" destination="TNd-3I-YEX" id="x4D-I5-BiI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTF" destination="qJi-0m-nOx" id="1oz-XT-VwQ"/>
+                        <outlet property="passwordTF" destination="gzf-sj-EaZ" id="rLR-Gy-PaV"/>
+                        <segue destination="ANH-Ne-9zF" kind="showDetail" identifier="LoginToSupplierHome" id="6IU-C1-VpX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYU-bL-4W4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="-1314"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cv5-ov-sJk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wvE-nX-e3Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjh-ZY-aCM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TNd-3I-YEX" kind="relationship" relationship="rootViewController" id="NLb-bg-61z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Tw-SM-iJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="-2053"/>
+        </scene>
+        <!--Đăng Ký Nhà Cung Cấp-->
+        <scene sceneID="H8d-d8-Chy">
+            <objects>
+                <viewController id="NcG-qz-9JR" customClass="SignUpVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OPd-H6-GBa"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYR-o2-pyc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F84-6B-zZa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c1-9c-vuC" customClass="FancyView" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dm-HH-jUv">
+                                        <rect key="frame" x="10" y="10" width="300" height="90"/>
+                                        <connections>
+                                            <action selector="pickLogoBtn:" destination="NcG-qz-9JR" eventType="touchUpInside" id="xRH-Jh-gaf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click để chọn logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDB-U3-yIV">
+                                        <rect key="frame" x="20.5" y="39" width="280" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="bhN-B7-mNm"/>
+                                            <constraint firstAttribute="height" constant="31" id="gQG-Ye-LrE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elite_condos_supplier_default" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-J8-dCK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5f6-J8-dCK" firstAttribute="top" secondItem="9c1-9c-vuC" secondAttribute="top" id="1Fp-Z5-eC9"/>
+                                    <constraint firstItem="rDB-U3-yIV" firstAttribute="centerX" secondItem="9c1-9c-vuC" secondAttribute="centerX" id="51Q-ke-UFN"/>
+                                    <constraint firstItem="5f6-J8-dCK" firstAttribute="leading" secondItem="9c1-9c-vuC" secondAttribute="leading" id="5QV-8r-s30"/>
+                                    <constraint firstAttribute="trailing" secondItem="6dm-HH-jUv" secondAttribute="trailing" constant="10" id="6fG-Xq-usO"/>
+                                    <constraint firstAttribute="trailing" secondItem="5f6-J8-dCK" secondAttribute="trailing" id="CQu-WF-I18"/>
+                                    <constraint firstAttribute="bottom" secondItem="5f6-J8-dCK" secondAttribute="bottom" id="FDz-ma-SV9"/>
+                                    <constraint firstAttribute="bottom" secondItem="6dm-HH-jUv" secondAttribute="bottom" constant="10" id="LU7-h6-vaR"/>
+                                    <constraint firstItem="rDB-U3-yIV" firstAttribute="centerY" secondItem="9c1-9c-vuC" secondAttribute="centerY" id="Wxp-3m-3oz"/>
+                                    <constraint firstItem="6dm-HH-jUv" firstAttribute="leading" secondItem="9c1-9c-vuC" secondAttribute="leading" constant="10" id="ZZK-a7-7Nn"/>
+                                    <constraint firstAttribute="height" constant="110" id="oZF-1U-1fF"/>
+                                    <constraint firstItem="6dm-HH-jUv" firstAttribute="top" secondItem="9c1-9c-vuC" secondAttribute="top" constant="10" id="vLL-vw-Ep1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HnY-X6-NMf" customClass="FancyView" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="184" width="320" height="231"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0tU-2z-soG">
+                                        <rect key="frame" x="40" y="5" width="240" height="220"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tên Nhà Cung Cấp Dịch Vụ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-Ks-VEo" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="BTW-X7-rvN"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QxD-UG-MVR" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46.5" width="240" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="0JG-bV-1cx"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-c8-mbO" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="93" width="240" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="A58-Vy-I40"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Địa chỉ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iL-iB-MRs" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="139.5" width="240" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="aR3-j5-k3X"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số điện thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="550-Xy-3tF" customClass="FancyField" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="186" width="240" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="eMi-dL-tMk"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="Df3-Gc-7Tv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0tU-2z-soG" secondAttribute="trailing" constant="40" id="IxT-Ru-wc7"/>
+                                    <constraint firstItem="0tU-2z-soG" firstAttribute="leading" secondItem="HnY-X6-NMf" secondAttribute="leading" constant="40" id="efX-lU-nyB"/>
+                                    <constraint firstItem="0tU-2z-soG" firstAttribute="top" secondItem="HnY-X6-NMf" secondAttribute="top" constant="5" id="mQ2-GK-nFs"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xb-Fx-7vJ">
+                                <rect key="frame" x="0.0" y="450" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cGO-04-TEe"/>
+                                </constraints>
+                                <state key="normal" title="Đã có tài khoản? Đăng nhập"/>
+                                <connections>
+                                    <segue destination="wvE-nX-e3Y" kind="show" id="xJi-TA-BiX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5A-Ts-8Z6" customClass="FancyBtn" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                <rect key="frame" x="40" y="415" width="240" height="35"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.76078431369999999" blue="0.12791053920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="QEw-c0-sY2"/>
+                                </constraints>
+                                <state key="normal" title="Đăng Ký">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="NcG-qz-9JR" eventType="touchUpInside" id="gJS-ze-fjn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0Xb-Fx-7vJ" secondAttribute="bottom" id="4t0-ig-ncg"/>
+                            <constraint firstItem="9c1-9c-vuC" firstAttribute="leading" secondItem="F84-6B-zZa" secondAttribute="leading" id="Hkj-Id-4wa"/>
+                            <constraint firstItem="0Xb-Fx-7vJ" firstAttribute="leading" secondItem="F84-6B-zZa" secondAttribute="leading" id="VHC-fo-xzH"/>
+                            <constraint firstItem="l5A-Ts-8Z6" firstAttribute="leading" secondItem="F84-6B-zZa" secondAttribute="leading" constant="40" id="ZJV-jD-caM"/>
+                            <constraint firstAttribute="trailing" secondItem="0Xb-Fx-7vJ" secondAttribute="trailing" id="Zld-er-FkB"/>
+                            <constraint firstItem="l5A-Ts-8Z6" firstAttribute="top" secondItem="HnY-X6-NMf" secondAttribute="bottom" id="cAA-0V-4Ks"/>
+                            <constraint firstAttribute="trailing" secondItem="l5A-Ts-8Z6" secondAttribute="trailing" constant="40" id="dmW-yD-lK9"/>
+                            <constraint firstAttribute="trailing" secondItem="9c1-9c-vuC" secondAttribute="trailing" id="eSq-3c-pKZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HnY-X6-NMf" secondAttribute="trailing" id="fvn-Cc-k9h"/>
+                            <constraint firstItem="HnY-X6-NMf" firstAttribute="leading" secondItem="F84-6B-zZa" secondAttribute="leading" id="lQw-jr-hdF"/>
+                            <constraint firstItem="HnY-X6-NMf" firstAttribute="top" secondItem="9c1-9c-vuC" secondAttribute="bottom" constant="10" id="ql1-TW-q4h">
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="9c1-9c-vuC" firstAttribute="top" secondItem="OPd-H6-GBa" secondAttribute="bottom" id="z2m-Oe-RUp"/>
+                            <constraint firstItem="0Xb-Fx-7vJ" firstAttribute="top" secondItem="l5A-Ts-8Z6" secondAttribute="bottom" id="zsA-WF-m2x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Đăng Ký Nhà Cung Cấp" id="bpP-8w-mtX">
+                        <barButtonItem key="leftBarButtonItem" image="left-arrow" id="r8J-Ka-rL9">
+                            <connections>
+                                <action selector="backButton:" destination="NcG-qz-9JR" id="m5V-1e-gAr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressLbl" destination="2iL-iB-MRs" id="SCa-rZ-Ugh"/>
+                        <outlet property="emailLbl" destination="QxD-UG-MVR" id="xO6-Pg-Hyv"/>
+                        <outlet property="logoImage" destination="5f6-J8-dCK" id="8Qm-6b-mKG"/>
+                        <outlet property="nameLbl" destination="yXy-Ks-VEo" id="kbg-gN-Y1B"/>
+                        <outlet property="passwordLbl" destination="vcO-c8-mbO" id="rtk-FU-CeR"/>
+                        <outlet property="phoneLbl" destination="550-Xy-3tF" id="dlb-UC-8Bc"/>
+                        <outlet property="pickLogoLbl" destination="rDB-U3-yIV" id="xmA-Ed-FRE"/>
+                        <segue destination="ANH-Ne-9zF" kind="showDetail" identifier="SignUpToHomeVC" id="koW-2h-yMb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlW-XK-lB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2061" y="-1275"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fJk-Cd-aR8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUY-W2-Uul" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oJA-sx-Ook">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NcG-qz-9JR" kind="relationship" relationship="rootViewController" id="NyM-Xm-Xao"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5B-u6-7IL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2059" y="-2053"/>
+        </scene>
+        <!--SideMenuID-->
+        <scene sceneID="L85-b4-QRS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SideMenuID" id="ANH-Ne-9zF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rqf-U0-UgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="-1033"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="elite_condos_supplier_default" width="600" height="214"/>
+        <image name="left-arrow" width="32" height="32"/>
+        <image name="temp_home_logo" width="426" height="426"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="H9T-WK-B9e"/>
+        <segue reference="q76-ch-NDK"/>
+        <segue reference="koW-2h-yMb"/>
+    </inferredMetricsTieBreakers>
+</document>
