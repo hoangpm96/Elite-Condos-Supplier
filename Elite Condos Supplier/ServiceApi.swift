@@ -28,37 +28,51 @@ class ServiceApi {
         
     }
     
-    func addService(name: String, onSuccess: @escaping (String) -> Void, onError: @escaping (String) -> Void ){
+    func subscribe(service: ServiceData, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void ){
         
         guard let supplierID = Api.User.CURRENT_USER?.uid else {
             onError("Can't find supplier")
             return
         }
-        print("current Name: \(name)")
         
-        let ramdomId = randomString(length: 8)
-        FirRef.SERVICES.child(ramdomId).updateChildValues([
-            "name": name,
-            "supplier": supplierID
+        FirRef.SERVICES.child(service.id).updateChildValues([
+            "name": service.name
             ])
-        FirRef.SUPPLIER_SERVICES.child(supplierID).child(ramdomId).setValue(true)
+        FirRef.SERVICES.child(service.id).child("suppliers").updateChildValues([
+            supplierID: true])
+        
+        FirRef.SUPPLIER_SERVICES.child(supplierID).child(service.id).setValue(true)
+        
+        onSuccess()
     }
-    
-    func checkExistService(supplierID: String,key: String, name: String) {
+    func checkExist(service: ServiceData, onFound:  @escaping  () -> Void, notFound:  @escaping  () -> Void, onError: @escaping (String) -> Void ){
         
-        print("key: \(key)")
-        
-        FirRef.SERVICES.child(key).observe(.value, with: { (serviceSnap) in
-            if let serviceData = serviceSnap.value as? [String:Any]{
-                if let serviceName = serviceData["name"] as? String{
-                    print("name: \(name) || serviceName: \(serviceName)")
-                    if serviceName == name{
-                        
-                    }
-                }
+        guard let supplierID = Api.User.CURRENT_USER?.uid else {
+            onError("Can't find supplier")
+            return
+        }
+        FirRef.SUPPLIER_SERVICES.child(supplierID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChild(service.id){
+                onFound()
+                print("on found")
+            }
+            else {
+                notFound()
+                print("not found")
             }
         })
     }
+    func deleteService(service: ServiceData, onDeleted:  @escaping  () -> Void){
+        guard let supplierID = Api.User.CURRENT_USER?.uid else {
+//            onError("Can't find supplier")
+            return
+        }
+        FirRef.SUPPLIER_SERVICES.child(supplierID).child(service.id).removeValue()
+        FirRef.SERVICES.child(service.id).child("suppliers").child(supplierID).removeValue()
+        onDeleted()
+
+    }
+ 
     func getServiceData(serviceId: String, onSuccess: @escaping (Service) -> Void){
         FirRef.SERVICES.child(serviceId).observe(.value, with: { (serviceSnap) in
             print("serviceId: \(serviceId)")

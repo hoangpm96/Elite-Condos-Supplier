@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elite Condos Supplier/ServiceApi.swift"
-            timestampString = "510979388.142596"
+            timestampString = "511543808.202329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "ServiceApi"
-            landmarkType = "3">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "checkExist(service:onFound:notFound:onError:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

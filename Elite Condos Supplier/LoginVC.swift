@@ -32,7 +32,7 @@ class LoginVC: UIViewController , UITextFieldDelegate {
 //        }
         let email = "thoviet@gmail.com"
         let password = "123456"
-        
+//        self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
         AuthService.login(email: email, password: password, onSuccess: { 
             self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
             

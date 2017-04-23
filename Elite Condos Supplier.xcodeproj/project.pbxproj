@@ -11,6 +11,9 @@
 		D205619F1DD70A4D008B7EB5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205619E1DD70A4D008B7EB5 /* CircleImage.swift */; };
 		D2154FB91DE88DC700D0DF23 /* Supplier_OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */; };
 		D2154FBB1DE91D5600D0DF23 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2154FBA1DE91D5600D0DF23 /* Order.swift */; };
+		D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */; };
+		D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70491E7D7D6C005BB528 /* ServiceCell.swift */; };
+		D21D704C1E7D7D94005BB528 /* ServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D704B1E7D7D94005BB528 /* ServiceData.swift */; };
 		D22DC2F51E6FA5CD00075D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F31E6FA5CD00075D9F /* Main.storyboard */; };
 		D22DC2F81E6FB21C00075D9F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F61E6FB21C00075D9F /* Home.storyboard */; };
 		D22DC2FB1E6FB40900075D9F /* ServiceSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F91E6FB40900075D9F /* ServiceSettings.storyboard */; };
@@ -50,7 +53,6 @@
 		D2A25F041E7198B2008DE38A /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A25F031E7198B2008DE38A /* ServiceApi.swift */; };
 		D2BF5B081DCEE2AF002534EC /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BF5B071DCEE2AF002534EC /* SWRevealViewController.m */; };
 		D2BF5B121DCF8206002534EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BF5B111DCF8206002534EC /* Assets.xcassets */; };
-		D2CC40371DDC475C00E0E80F /* ServiceSettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC40361DDC475B00E0E80F /* ServiceSettingTVC.swift */; };
 		D2F5CD4E1DDEADA400FC7E42 /* ServiceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD4D1DDEADA400FC7E42 /* ServiceListCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,9 @@
 		D205619E1DD70A4D008B7EB5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supplier_OrderCell.swift; sourceTree = "<group>"; };
 		D2154FBA1DE91D5600D0DF23 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSettingVC.swift; sourceTree = "<group>"; };
+		D21D70491E7D7D6C005BB528 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		D21D704B1E7D7D94005BB528 /* ServiceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceData.swift; sourceTree = "<group>"; };
 		D22DC2F41E6FA5CD00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22DC2F71E6FB21C00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		D22DC2FA1E6FB40900075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ServiceSettings.storyboard; sourceTree = "<group>"; };
@@ -107,7 +112,6 @@
 		D2BF5B061DCEE2AF002534EC /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D2BF5B071DCEE2AF002534EC /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D2BF5B111DCF8206002534EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2CC40361DDC475B00E0E80F /* ServiceSettingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSettingTVC.swift; sourceTree = "<group>"; };
 		D2F5CD4D1DDEADA400FC7E42 /* ServiceListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +215,7 @@
 				D25556CE1DDA7A88004E7649 /* Supplier.swift */,
 				D24459251DDDF2FB00F51EE6 /* Service.swift */,
 				D2154FBA1DE91D5600D0DF23 /* Order.swift */,
+				D21D704B1E7D7D94005BB528 /* ServiceData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -259,9 +264,9 @@
 				D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */,
 				D27C63A21DDC398300B705CB /* HomeVC.swift */,
 				D27C639E1DDC308B00B705CB /* SignUpVC.swift */,
-				D2CC40361DDC475B00E0E80F /* ServiceSettingTVC.swift */,
 				D28EE7CC1DD9731000BCE1E9 /* LoginVC.swift */,
 				D28EE7CE1DD9762900BCE1E9 /* StartVC.swift */,
+				D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				D2F5CD4D1DDEADA400FC7E42 /* ServiceListCell.swift */,
 				D25556D01DDA84D6004E7649 /* SupplierCell.swift */,
 				D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */,
+				D21D70491E7D7D6C005BB528 /* ServiceCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -429,17 +435,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21D704C1E7D7D94005BB528 /* ServiceData.swift in Sources */,
 				D28EE7C51DD95A9600BCE1E9 /* FancyBtn.swift in Sources */,
 				D28EE7C71DD95A9600BCE1E9 /* FancyView.swift in Sources */,
 				D205619F1DD70A4D008B7EB5 /* CircleImage.swift in Sources */,
 				D24459261DDDF2FB00F51EE6 /* Service.swift in Sources */,
+				D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */,
 				D24459241DDDED4200F51EE6 /* RandomString.swift in Sources */,
 				D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */,
 				D28932521E703FD6001816AA /* UserApi.swift in Sources */,
 				D28EE7CB1DD95AF200BCE1E9 /* Constant.swift in Sources */,
 				D2F5CD4E1DDEADA400FC7E42 /* ServiceListCell.swift in Sources */,
 				D27C639F1DDC308B00B705CB /* SignUpVC.swift in Sources */,
-				D2CC40371DDC475C00E0E80F /* ServiceSettingTVC.swift in Sources */,
 				D2502C161DC8E2DF009189E7 /* AppDelegate.swift in Sources */,
 				D2154FB91DE88DC700D0DF23 /* Supplier_OrderCell.swift in Sources */,
 				D28EE7C81DD95A9600BCE1E9 /* RoundBtn.swift in Sources */,
@@ -456,6 +463,7 @@
 				D28932501E703FB4001816AA /* AuthService.swift in Sources */,
 				D25556C81DD9C56D004E7649 /* Errors.swift in Sources */,
 				D25556C41DD9B9C4004E7649 /* DataService.swift in Sources */,
+				D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */,
 				D28932561E70402A001816AA /* Api.swift in Sources */,
 				D27C63A31DDC398300B705CB /* HomeVC.swift in Sources */,
 			);
