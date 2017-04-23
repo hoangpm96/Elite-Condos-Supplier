@@ -22,16 +22,16 @@ class LoginVC: UIViewController , UITextFieldDelegate {
 
     
     @IBAction func loginButton(_ sender: Any) {
-//        guard let email = emailTF.text, email != "" else {
-//            showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_EMAIL)
-//            return
-//        }
-//        guard let password = passwordTF.text, password != "" else {
-//            showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_PASSWORD)
-//            return
-//        }
-        let email = "thoviet@gmail.com"
-        let password = "123456"
+        guard let email = emailTF.text, email != "" else {
+            showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_EMAIL)
+            return
+        }
+        guard let password = passwordTF.text, password != "" else {
+            showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_PASSWORD)
+            return
+        }
+//        let email = "thoviet@gmail.com"
+//        let password = "123456"
 //        self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
         AuthService.login(email: email, password: password, onSuccess: { 
             self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)

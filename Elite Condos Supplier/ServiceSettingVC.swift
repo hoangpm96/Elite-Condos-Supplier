@@ -10,10 +10,19 @@ import UIKit
 
 class ServiceSettingVC: UIViewController {
 
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
     var services = getServiceData()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if self.revealViewController() != nil{
+            menuBarButton.target = self.revealViewController()
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         tableView.dataSource = self
         tableView.delegate = self
     }
