@@ -30,7 +30,7 @@ class Supplier_OrderCell: UITableViewCell {
         customerAddressLbl.text = order.serviceName
         orderIdLbl.text = "#\(order.id)"
         
-        DataService.ds.REF_CUSTOMERS.child(order.customerId).observeSingleEvent(of: .value, with: {
+        FirRef.CUSTOMERS.child(order.customerId).observeSingleEvent(of: .value, with: {
                         snapshot in
                             if let snapData = snapshot.value as? Dictionary<String,Any>{
                                 if let name = snapData["name"] as? String{
@@ -38,34 +38,8 @@ class Supplier_OrderCell: UITableViewCell {
                                 }
                             }
                     })
-       
-        DataService.ds.REF_EMPLOYEES.child(order.employeeId).observeSingleEvent(of: .value, with: {
-            snapshot in
-            if let snapData = snapshot.value as? Dictionary<String,Any>{
-                if let employeeImgUrl = snapData["avatarUrl"] as? String{
-                    let ref = FIRStorage.storage().reference(forURL: employeeImgUrl)
-                    
-                    ref.data(withMaxSize: 2 * 1024 * 1024, completion:
-                        { data, error in
-                            if error != nil{
-                                print("can't download image from Firebase")
-                            }else{
-                                
-                                if let data = data {
-                                    print(" from Firebase")
-                                    if let imageData = UIImage(data: data){
-                                        self.employeeAvatarImg.image = imageData
-                                    }
-                                }
-                            }
-                            
-                    })
-
-                }
-            }
-        })
     }
-    
+        
 
     
 

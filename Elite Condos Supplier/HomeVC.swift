@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ProgressHUD
 class HomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,56 +28,61 @@ class HomeVC: UIViewController {
         }
         tableView.delegate = self
         tableView.dataSource = self
-        
-        DataService.ds.REF_SUPPLIERS.child(userId).child("orders").queryOrdered(byChild: "status").queryEqual(toValue: ORDER_STATUS.ONGOING.hashValue).observe(.childAdded, with: {
-            
-            snapshot in
-            self.orders = []
-            if let snap = snapshot.value as? [String:Any]{
-                let order = Order(id: snapshot.key, data: snap)
-                self.orders.append(order)
-                self.tableView.reloadData()
-            }
-        })
-        
     }
-    
-    
-    
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchOrders(status: 0)
+    }
     // MARK: Functions
     
-    
+    func fetchOrders(status: Int){
+        orders = []
+        self.tableView.reloadData()
+        ProgressHUD.show("Đang tải dữ liệu...")
+        
+        switch status {
+        case 0:
+            Api.Order.observeOnGoingOrders(completed: { (order) in
+                self.orders.append(order)
+                self.tableView.reloadData()
+                ProgressHUD.dismiss()
+            }, onNotFound: {
+                ProgressHUD.dismiss()
+            })
+        case 1:
+            Api.Order.observeCancelOrders(completed: { (order) in
+                self.orders.append(order)
+                self.tableView.reloadData()
+                ProgressHUD.dismiss()
+            }, onNotFound: {
+                ProgressHUD.dismiss()
+            })
+        case 2:
+            Api.Order.observeFinishOrders(completed: { (order) in
+                self.orders.append(order)
+                self.tableView.reloadData()
+                ProgressHUD.dismiss()
+            }, onNotFound: {
+                ProgressHUD.dismiss()
+            })
+        default:
+            return
+        }
+        
+        
+    }
     @IBAction func ongoingBtn(_ sender: Any) {
-        isOnGoingClicked = true
-        changeOrdersBy(status: ORDER_STATUS.ONGOING)
+        fetchOrders(status: 0)
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
-        isOnGoingClicked = false
-        changeOrdersBy(status: ORDER_STATUS.CANCEL)
+        fetchOrders(status: 1)
     }
     
     @IBAction func finishBtn(_ sender: Any) {
-        isOnGoingClicked = false
-        changeOrdersBy(status: ORDER_STATUS.FINISHED)
+        fetchOrders(status: 2)
     }
-    func changeOrdersBy(status : ORDER_STATUS){
-        DataService.ds.REF_SUPPLIERS.child(userId).child("orders").queryOrdered(byChild: "status").queryEqual(toValue: status.hashValue).observe(.childChanged, with: {
-            
-            
-            snapshot in
-            self.orders = []
-            if let snap = snapshot.value as? [String:Any]{
-                let order = Order(id: snapshot.key, data: snap)
-                self.orders.append(order)
-                self.tableView.reloadData()
-            }
-            
-            
-        })
-    }
+    
 }
 
 
@@ -89,14 +95,10 @@ extension HomeVC: UITableViewDataSource{
         return orders.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Supplier_OrderCell", for: indexPath) as?
-            Supplier_OrderCell{
+         let cell = tableView.dequeueReusableCell(withIdentifier: "Supplier_OrderCell", for: indexPath) as!
+            Supplier_OrderCell
             cell.configureCell(order: orders[indexPath.row])
             return cell
-        }else {
-            return UITableViewCell()
-        }
-        
     }
     
     
@@ -127,7 +129,7 @@ extension HomeVC: UITableViewDelegate{
             
             // update order status - cancel
             
-            DataService.ds.updateOrders(orderId: orderId, supplierId: userId, customerId: customerId, status : ORDER_STATUS.CANCEL)
+//            FirRef.SUPPLIERS.updateOrders(orderId: orderId, supplierId: userId, customerId: customerId, status : ORDER_STATUS.CANCEL)
             
             
         })

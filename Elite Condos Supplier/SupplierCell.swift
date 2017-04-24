@@ -44,7 +44,7 @@ class SupplierCell: UITableViewCell {
         })
         var totalStars = 0.0
         var count = 0
-        DataService.ds.REF_SUPPLIERS.child(supplier.id).child("reviews").observeSingleEvent(of: .value, with: {
+        FirRef.SUPPLIERS.child(supplier.id).child("reviews").observeSingleEvent(of: .value, with: {
             snapshot in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
                 

@@ -22,7 +22,7 @@ class AuthService{
             }else{
                 let id = user?.uid
                 userId = id!
-                DataService.ds.REF_USERS.child(id!).observeSingleEvent(of: .value, with: {snapshot in
+                FirRef.USERS.child(id!).observeSingleEvent(of: .value, with: {snapshot in
                     if let userData = snapshot.value as? Dictionary<String,Any>{
                         print(userData)
                         if userData["customer"] != nil{
