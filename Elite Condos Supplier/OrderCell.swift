@@ -1,3 +1,4 @@
+
 //
 //  Supplier_OrderCell.swift
 //  Elite Condos
@@ -8,14 +9,19 @@
 
 import UIKit
 import Firebase
-class Supplier_OrderCell: UITableViewCell {
+class OrderCell: UITableViewCell {
 
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
-    @IBOutlet weak var employeeAvatarImg: CircleImage!
     @IBOutlet weak var customerAvatarImg: CircleImage!
     @IBOutlet weak var customerNameLbl: UILabel!
     @IBOutlet weak var customerAddressLbl: UILabel!
+    
+    var order: Order?{
+        didSet{
+            updateView()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,18 +32,19 @@ class Supplier_OrderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configureCell( order : Order ){
-        customerAddressLbl.text = order.serviceName
-        orderIdLbl.text = "#\(order.id)"
+    func updateView(){
         
-        FirRef.CUSTOMERS.child(order.customerId).observeSingleEvent(of: .value, with: {
-                        snapshot in
-                            if let snapData = snapshot.value as? Dictionary<String,Any>{
-                                if let name = snapData["name"] as? String{
-                                    self.customerNameLbl.text = name
-                                }
-                            }
-                    })
+        customerAddressLbl.text = order?.serviceName
+        orderIdLbl.text = "# \((order?.id)!)"
+        
+        Api.Order.getCustomerName(id: (order?.customerId)!) { (name) in
+            self.customerNameLbl.text  = name
+        }
+        Api.Order.getUserPhoto(id: (order?.customerId)!, onError: { (error) in
+            print(error)
+        }) { (img) in
+            self.customerAvatarImg.image = img
+        }
     }
         
 

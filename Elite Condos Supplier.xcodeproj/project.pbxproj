@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5D9FC896CA5EACDE7AFA8FF /* Pods_Elite_Condos_Supplier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AD906137CE0984595893D /* Pods_Elite_Condos_Supplier.framework */; };
 		D205619F1DD70A4D008B7EB5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205619E1DD70A4D008B7EB5 /* CircleImage.swift */; };
-		D2154FB91DE88DC700D0DF23 /* Supplier_OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */; };
+		D2154FB91DE88DC700D0DF23 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2154FB81DE88DC700D0DF23 /* OrderCell.swift */; };
 		D2154FBB1DE91D5600D0DF23 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2154FBA1DE91D5600D0DF23 /* Order.swift */; };
 		D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */; };
 		D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70491E7D7D6C005BB528 /* ServiceCell.swift */; };
@@ -65,7 +65,7 @@
 		B15AD906137CE0984595893D /* Pods_Elite_Condos_Supplier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elite_Condos_Supplier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD4C63D37E5B346324C4F4F /* Pods-Elite Condos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elite Condos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Elite Condos/Pods-Elite Condos.release.xcconfig"; sourceTree = "<group>"; };
 		D205619E1DD70A4D008B7EB5 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supplier_OrderCell.swift; sourceTree = "<group>"; };
+		D2154FB81DE88DC700D0DF23 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		D2154FBA1DE91D5600D0DF23 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSettingVC.swift; sourceTree = "<group>"; };
 		D21D70491E7D7D6C005BB528 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			children = (
 				D2F5CD4D1DDEADA400FC7E42 /* ServiceListCell.swift */,
 				D25556D01DDA84D6004E7649 /* SupplierCell.swift */,
-				D2154FB81DE88DC700D0DF23 /* Supplier_OrderCell.swift */,
+				D2154FB81DE88DC700D0DF23 /* OrderCell.swift */,
 				D21D70491E7D7D6C005BB528 /* ServiceCell.swift */,
 			);
 			name = Views;
@@ -455,7 +455,7 @@
 				D2F5CD4E1DDEADA400FC7E42 /* ServiceListCell.swift in Sources */,
 				D27C639F1DDC308B00B705CB /* SignUpVC.swift in Sources */,
 				D2502C161DC8E2DF009189E7 /* AppDelegate.swift in Sources */,
-				D2154FB91DE88DC700D0DF23 /* Supplier_OrderCell.swift in Sources */,
+				D2154FB91DE88DC700D0DF23 /* OrderCell.swift in Sources */,
 				D28EE7C81DD95A9600BCE1E9 /* RoundBtn.swift in Sources */,
 				D2A25F041E7198B2008DE38A /* ServiceApi.swift in Sources */,
 				D28EE7C61DD95A9600BCE1E9 /* FancyField.swift in Sources */,

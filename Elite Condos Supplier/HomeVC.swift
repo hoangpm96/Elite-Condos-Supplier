@@ -95,10 +95,10 @@ extension HomeVC: UITableViewDataSource{
         return orders.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "Supplier_OrderCell", for: indexPath) as!
-            Supplier_OrderCell
-            cell.configureCell(order: orders[indexPath.row])
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as!
+        OrderCell
+        cell.order = orders[indexPath.row]
+        return cell
     }
     
     
@@ -115,10 +115,6 @@ extension HomeVC: UITableViewDelegate{
         
         let chooseEmployee = UIAlertAction(title: "Chọn nhân viên", style: .default, handler: {
             action in
-            
-            
-            
-            
             self.performSegue(withIdentifier: "PickEmployeeVC", sender: ["order" : orderId,"customer" : customerId])
             
             
@@ -129,7 +125,7 @@ extension HomeVC: UITableViewDelegate{
             
             // update order status - cancel
             
-//            FirRef.SUPPLIERS.updateOrders(orderId: orderId, supplierId: userId, customerId: customerId, status : ORDER_STATUS.CANCEL)
+            //            FirRef.SUPPLIERS.updateOrders(orderId: orderId, supplierId: userId, customerId: customerId, status : ORDER_STATUS.CANCEL)
             
             
         })

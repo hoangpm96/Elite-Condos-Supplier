@@ -19,6 +19,35 @@ class OrderApi{
     var serviceId = ""
     
     
+    func getUserPhoto(id: String, onError: @escaping (String) -> Void, onSuccess: @escaping (UIImage) -> Void ){
+        FirRef.CUSTOMERS.child(id).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let snapData = snapshot.value as? Dictionary<String,Any>{
+                if let imgUrl = snapData["avatarUrl"] as? String{
+                    
+                    Api.User
+                        .downloadImage(imgUrl: imgUrl, onError: onError, onSuccess: onSuccess)
+                }
+            }
+        })
+        
+        
+        
+    }
+    
+    func getCustomerName(id: String, onSuccess: @escaping (String) -> Void){
+        FirRef.CUSTOMERS.child(id).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let snapData = snapshot.value as? Dictionary<String,Any>{
+                if let name = snapData["name"] as? String{
+                    onSuccess(name)
+                }
+            }
+        })
+    }
+    
+    
+    
     // upload order photos -> img links
     func initOrder(orderData: [String:Any], onSuccess: @escaping (String) -> Void){
         uploadPhotos { (imgUrls) in

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vxo-q2-hKz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vxo-q2-hKz">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -87,21 +87,21 @@
                                 <rect key="frame" x="0.0" y="124" width="320" height="356"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Supplier_OrderCell" rowHeight="134" id="fLc-dl-c5U" customClass="Supplier_OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="134" id="fLc-dl-c5U" customClass="OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLc-dl-c5U" id="2jz-Lh-adf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="khoa" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-RX-4zD" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="khoa" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-RX-4zD" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="37" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="1L4-k8-xQN"/>
                                                         <constraint firstAttribute="width" constant="60" id="6w0-xh-qod"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Thị My" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-SP-e5D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="......." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-SP-e5D">
                                                     <rect key="frame" x="70" y="32" width="180" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="Kuk-uL-nPt"/>
@@ -121,13 +121,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="techician" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Xc-c8G" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
-                                                    <rect key="frame" x="252" y="37" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="pqe-a2-dg9"/>
-                                                        <constraint firstAttribute="height" constant="60" id="vte-zE-aoY"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 2, 2016 at 8:00:47 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf7-88-fpZ">
                                                     <rect key="frame" x="35" y="2" width="250" height="20"/>
                                                     <constraints>
@@ -150,14 +143,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Vhl-Xc-c8G" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" id="71r-ow-sh6"/>
                                                 <constraint firstItem="5nw-SP-e5D" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="-25" id="9nK-aP-hCb"/>
                                                 <constraint firstItem="Vf7-88-fpZ" firstAttribute="top" secondItem="2jz-Lh-adf" secondAttribute="top" constant="2" id="F9B-f6-n1g"/>
                                                 <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="FDz-b0-xrS"/>
                                                 <constraint firstItem="B9Q-tx-Min" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="JJS-jV-5Cs"/>
                                                 <constraint firstItem="T0Z-RX-4zD" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" id="Jw3-RT-R0a"/>
                                                 <constraint firstItem="B9Q-tx-Min" firstAttribute="top" secondItem="QEI-Nt-hc9" secondAttribute="bottom" constant="5" id="KfV-Qs-ecz"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vhl-Xc-c8G" secondAttribute="trailing" constant="8" id="Wnv-tU-bSq"/>
                                                 <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="10" id="gPw-e9-s4o"/>
                                                 <constraint firstItem="Vf7-88-fpZ" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="hWg-QP-dlm"/>
                                                 <constraint firstItem="T0Z-RX-4zD" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="mJQ-gv-GiY"/>
@@ -168,7 +159,6 @@
                                             <outlet property="customerAddressLbl" destination="QEI-Nt-hc9" id="cLp-K0-ntx"/>
                                             <outlet property="customerAvatarImg" destination="T0Z-RX-4zD" id="px4-Rq-R20"/>
                                             <outlet property="customerNameLbl" destination="5nw-SP-e5D" id="ZxX-7c-xeU"/>
-                                            <outlet property="employeeAvatarImg" destination="Vhl-Xc-c8G" id="9bV-HX-bj9"/>
                                             <outlet property="orderIdLbl" destination="B9Q-tx-Min" id="1l9-be-enj"/>
                                             <outlet property="timeLbl" destination="Vf7-88-fpZ" id="jKV-xM-Suu"/>
                                         </connections>
@@ -251,7 +241,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdQ-kC-t8a" id="50I-B2-C91">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nhanvien1" translatesAutoresizingMaskIntoConstraints="NO" id="sze-bs-NsP" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
@@ -321,6 +311,5 @@
         <image name="icon_menu_24dp" width="24" height="24"/>
         <image name="khoa" width="720" height="720"/>
         <image name="nhanvien1" width="1632" height="2048"/>
-        <image name="techician" width="350" height="251"/>
     </resources>
 </document>
