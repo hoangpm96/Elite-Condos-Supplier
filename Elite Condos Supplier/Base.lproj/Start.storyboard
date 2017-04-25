@@ -103,6 +103,7 @@
                     <connections>
                         <segue destination="wvE-nX-e3Y" kind="show" identifier="SupplierSignIn" action="showDetailViewController:sender:" id="H9T-WK-B9e"/>
                         <segue destination="rUY-W2-Uul" kind="showDetail" identifier="SupplierSignUp" action="showViewController:sender:" id="q76-ch-NDK"/>
+                        <segue destination="ANH-Ne-9zF" kind="showDetail" identifier="StartToHome" id="jll-1x-KaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -433,8 +434,8 @@
         <image name="logo" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xJi-TA-BiX"/>
         <segue reference="q76-ch-NDK"/>
-        <segue reference="koW-2h-yMb"/>
+        <segue reference="H9T-WK-B9e"/>
+        <segue reference="jll-1x-KaJ"/>
     </inferredMetricsTieBreakers>
 </document>
