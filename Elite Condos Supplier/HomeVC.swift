@@ -26,7 +26,7 @@ class HomeVC: UIViewController {
             menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-    
+        ProgressHUD.show("Đang tải dữ liệu...")
         FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
             print(snapshots)
             
@@ -45,19 +45,15 @@ class HomeVC: UIViewController {
                     }
                     
                 }
+                ProgressHUD.dismiss()
                 self.tableView.reloadData()
             }
             
             
             
         })
-
         
-//        Api.Order.observeOnGoingOrders(completed: { (order) in
-//            self.orders.append(order)
-//            self.tableView.reloadData()
-//        })
-            tableView.dataSource = self
+        tableView.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -86,54 +82,14 @@ class HomeVC: UIViewController {
                     }
                     
                 }
-                self.tableView.reloadData()
                 ProgressHUD.dismiss()
+                self.tableView.reloadData()
+                
             }
             
             
             
         })
-
-        
-        
-        
-        
-//        orders.removeAll()
-//        self.tableView.reloadData()
-        
-//        
-//        switch status {
-//        case 0:
-//            orders.removeAll()
-//            self.tableView.reloadData()
-//            Api.Order.observeOnGoingOrders(completed: { (order) in
-//                self.orders.append(order)
-//                ProgressHUD.dismiss()
-//                self.tableView.reloadData()
-//               
-//
-//            })
-//            
-//            case 1:
-//                Api.Order.observeCancelOrders(completed: { (order) in
-//                    self.orders.append(order)
-//                    self.tableView.reloadData()
-//                    ProgressHUD.dismiss()
-//                    
-//                })
-//        case 2:
-//            Api.Order.observeFinishOrders(completed: { (order) in
-//                self.orders.append(order)
-//                self.tableView.reloadData()
-//                ProgressHUD.dismiss()
-//            }, onNotFound: {
-//                ProgressHUD.dismiss()
-//            })
-//        default:
-//            return
-//        }
-        
-        
     }
     @IBAction func ongoingBtn(_ sender: Any) {
         fetchOrders(orderStatus: 0)

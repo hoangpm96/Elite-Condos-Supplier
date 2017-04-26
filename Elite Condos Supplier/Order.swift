@@ -15,7 +15,7 @@ class Order  {
     private var _serviceName : String!
     private var _supplierId : String!
     private var _employeeId : String!
-    private var _status : ORDER_STATUS!
+    private var _status : Int!
     
     
     var id : String{
@@ -34,7 +34,7 @@ class Order  {
         return _supplierId
     }
     
-    var status : ORDER_STATUS{
+    var status : Int{
         return _status
     }
     
@@ -49,7 +49,7 @@ class Order  {
         if let supplierId = data["supplierId"] as? String{
             self._supplierId = supplierId
         }
-        if let status = data["status"] as? ORDER_STATUS{
+        if let status = data["status"] as? Int{
             self._status = status
         }
         if let employeeId = data["employeeId"] as? String{

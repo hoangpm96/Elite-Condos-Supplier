@@ -16,6 +16,8 @@ protocol OrderCellDelegate{
 }
 class OrderCell: UITableViewCell {
     
+    @IBOutlet weak var detailButton: FancyBtn!
+    @IBOutlet weak var denyButton: FancyBtn!
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var customerAvatarImg: CircleImage!
@@ -27,12 +29,20 @@ class OrderCell: UITableViewCell {
     
     var order: Order?{
         didSet{
+            print("truoc")
             updateView()
+            
+            if order?.status == ORDER_STATUS.CANCEL.hashValue || order?.status == ORDER_STATUS.FINISHED.hashValue{
+                denyButton.isHidden = true
+            }
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("sau")
         // Initialization code
+        
+       
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
