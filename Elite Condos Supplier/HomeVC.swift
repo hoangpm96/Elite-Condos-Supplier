@@ -26,65 +26,128 @@ class HomeVC: UIViewController {
             menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        tableView.delegate = self
-        tableView.dataSource = self
+    
+        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
+            print(snapshots)
+            
+            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+                self.orders.removeAll()
+                for orderSnapshot in snapshots{
+                    if let dict = orderSnapshot.value as? [String:Any]{
+                        print(dict)
+                        if let status = dict["status"] as? Int{
+                            if status == 0 {
+                                print("alo \(status)")
+                                let order = Order(id: orderSnapshot.key, data: dict)
+                                self.orders.append(order)
+                            }
+                        }
+                    }
+                    
+                }
+                self.tableView.reloadData()
+            }
+            
+            
+            
+        })
+
+        
+//        Api.Order.observeOnGoingOrders(completed: { (order) in
+//            self.orders.append(order)
+//            self.tableView.reloadData()
+//        })
+            tableView.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        fetchOrders(status: 0)
+        
     }
     // MARK: Functions
     
-    func fetchOrders(status: Int){
-        orders = []
-        self.tableView.reloadData()
-        ProgressHUD.show("Đang tải dữ liệu...")
+    func fetchOrders(orderStatus: Int){
         
-        switch status {
-        case 0:
-            Api.Order.observeOnGoingOrders(completed: { (order) in
-                self.orders.append(order)
+        ProgressHUD.show("Đang tải dữ liệu...")
+        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
+            print(snapshots)
+            
+            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+                self.orders.removeAll()
+                for orderSnapshot in snapshots{
+                    if let dict = orderSnapshot.value as? [String:Any]{
+                        print(dict)
+                        if let status = dict["status"] as? Int{
+                            if status ==  orderStatus{
+                                print("alo \(status)")
+                                let order = Order(id: orderSnapshot.key, data: dict)
+                                self.orders.append(order)
+                            }
+                        }
+                    }
+                    
+                }
                 self.tableView.reloadData()
                 ProgressHUD.dismiss()
-            }, onNotFound: {
-                ProgressHUD.dismiss()
-            })
-        case 1:
-            Api.Order.observeCancelOrders(completed: { (order) in
-                self.orders.append(order)
-                self.tableView.reloadData()
-                ProgressHUD.dismiss()
-            }, onNotFound: {
-                ProgressHUD.dismiss()
-            })
-        case 2:
-            Api.Order.observeFinishOrders(completed: { (order) in
-                self.orders.append(order)
-                self.tableView.reloadData()
-                ProgressHUD.dismiss()
-            }, onNotFound: {
-                ProgressHUD.dismiss()
-            })
-        default:
-            return
-        }
+            }
+            
+            
+            
+        })
+
+        
+        
+        
+        
+//        orders.removeAll()
+//        self.tableView.reloadData()
+        
+//        
+//        switch status {
+//        case 0:
+//            orders.removeAll()
+//            self.tableView.reloadData()
+//            Api.Order.observeOnGoingOrders(completed: { (order) in
+//                self.orders.append(order)
+//                ProgressHUD.dismiss()
+//                self.tableView.reloadData()
+//               
+//
+//            })
+//            
+//            case 1:
+//                Api.Order.observeCancelOrders(completed: { (order) in
+//                    self.orders.append(order)
+//                    self.tableView.reloadData()
+//                    ProgressHUD.dismiss()
+//                    
+//                })
+//        case 2:
+//            Api.Order.observeFinishOrders(completed: { (order) in
+//                self.orders.append(order)
+//                self.tableView.reloadData()
+//                ProgressHUD.dismiss()
+//            }, onNotFound: {
+//                ProgressHUD.dismiss()
+//            })
+//        default:
+//            return
+//        }
         
         
     }
     @IBAction func ongoingBtn(_ sender: Any) {
-        fetchOrders(status: 0)
+        fetchOrders(orderStatus: 0)
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
-        fetchOrders(status: 1)
+        fetchOrders(orderStatus: 1)
     }
     
     @IBAction func finishBtn(_ sender: Any) {
-        fetchOrders(status: 2)
+        fetchOrders(orderStatus: 2)
     }
     
 }
-
 
 extension HomeVC: UITableViewDataSource{
     // MARK: Tableview
@@ -97,6 +160,7 @@ extension HomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as!
         OrderCell
+        cell.delegate = self
         cell.order = orders[indexPath.row]
         return cell
     }
@@ -104,41 +168,17 @@ extension HomeVC: UITableViewDataSource{
     
 }
 
-extension HomeVC: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let orderId = orders[indexPath.row].id
-        let customerId = orders[indexPath.row].customerId
-        
-        print(" Hello:  \(orderId) - \(customerId) ")
-        let alert = UIAlertController(title: "Elite Condos", message: "", preferredStyle: .actionSheet)
-        
-        let chooseEmployee = UIAlertAction(title: "Chọn nhân viên", style: .default, handler: {
-            action in
-            self.performSegue(withIdentifier: "PickEmployeeVC", sender: ["order" : orderId,"customer" : customerId])
-            
-            
-        })
-        
-        let cancelOrder = UIAlertAction(title: "Hủy đơn hàng", style: .default, handler: {
-            action in
-            
-            // update order status - cancel
-            
-            //            FirRef.SUPPLIERS.updateOrders(orderId: orderId, supplierId: userId, customerId: customerId, status : ORDER_STATUS.CANCEL)
-            
-            
-        })
-        
-        let cancel = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
-        
-        if ( isOnGoingClicked  ){
-            alert.addAction(chooseEmployee)
-            alert.addAction(cancelOrder)
-            
-        }
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
+extension HomeVC: OrderCellDelegate{
+    
+    func moveToDetail(orderId: String) {
+        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
     }
+    func denyOrder(orderId: String) {
+        Api.Order.denyOrder(at: orderId) { 
+            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
+        }
+        print(ORDER_STATUS.CANCEL.hashValue)
+    }
+    
 }
 

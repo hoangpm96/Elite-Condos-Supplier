@@ -9,13 +9,21 @@
 
 import UIKit
 import Firebase
-class OrderCell: UITableViewCell {
 
+protocol OrderCellDelegate{
+    func moveToDetail(orderId: String)
+    func denyOrder(orderId: String)
+}
+class OrderCell: UITableViewCell {
+    
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var customerAvatarImg: CircleImage!
     @IBOutlet weak var customerNameLbl: UILabel!
     @IBOutlet weak var customerAddressLbl: UILabel!
+    
+    
+    var delegate: OrderCellDelegate?
     
     var order: Order?{
         didSet{
@@ -26,10 +34,10 @@ class OrderCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     func updateView(){
@@ -46,8 +54,14 @@ class OrderCell: UITableViewCell {
             self.customerAvatarImg.image = img
         }
     }
-        
-
+    @IBAction func deny_TouchInside(_ sender: Any) {
+        delegate?.denyOrder(orderId: (order?.id)!)
+    }
     
-
+    
+    @IBAction func detail_TouchInside(_ sender: Any) {
+        delegate?.moveToDetail(orderId: (order?.id)!)
+    }
+    
+    
 }

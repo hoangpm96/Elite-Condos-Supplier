@@ -14,6 +14,7 @@
 		D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */; };
 		D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70491E7D7D6C005BB528 /* ServiceCell.swift */; };
 		D21D704C1E7D7D94005BB528 /* ServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D704B1E7D7D94005BB528 /* ServiceData.swift */; };
+		D22601E01EA1062A0057D7D9 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */; };
 		D22DC2F51E6FA5CD00075D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F31E6FA5CD00075D9F /* Main.storyboard */; };
 		D22DC2F81E6FB21C00075D9F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F61E6FB21C00075D9F /* Home.storyboard */; };
 		D22DC2FB1E6FB40900075D9F /* ServiceSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F91E6FB40900075D9F /* ServiceSettings.storyboard */; };
@@ -70,6 +71,7 @@
 		D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSettingVC.swift; sourceTree = "<group>"; };
 		D21D70491E7D7D6C005BB528 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		D21D704B1E7D7D94005BB528 /* ServiceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceData.swift; sourceTree = "<group>"; };
+		D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		D22DC2F41E6FA5CD00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22DC2F71E6FB21C00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		D22DC2FA1E6FB40900075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ServiceSettings.storyboard; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				D28EE7CC1DD9731000BCE1E9 /* LoginVC.swift */,
 				D28EE7CE1DD9762900BCE1E9 /* StartVC.swift */,
 				D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */,
+				D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				D28932521E703FD6001816AA /* UserApi.swift in Sources */,
 				D28EE7CB1DD95AF200BCE1E9 /* Constant.swift in Sources */,
 				D2F5CD4E1DDEADA400FC7E42 /* ServiceListCell.swift in Sources */,
+				D22601E01EA1062A0057D7D9 /* OrderDetailVC.swift in Sources */,
 				D27C639F1DDC308B00B705CB /* SignUpVC.swift in Sources */,
 				D2502C161DC8E2DF009189E7 /* AppDelegate.swift in Sources */,
 				D2154FB91DE88DC700D0DF23 /* OrderCell.swift in Sources */,

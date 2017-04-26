@@ -22,8 +22,8 @@ class SideMenuTVC: UITableViewController {
       
         
         configureActionForCell()
-        
-        FirRef.SUPPLIERS.child(userId).observeSingleEvent(of: .value, with: {
+        let currentId = Api.User.currentUid()
+        FirRef.SUPPLIERS.child(currentId).observeSingleEvent(of: .value, with: {
             snapshot in
             if let snapshot = snapshot.value as? Dictionary<String,Any>{
                 if let name = snapshot["name"] as? String{

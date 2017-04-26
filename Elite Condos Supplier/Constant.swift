@@ -39,7 +39,6 @@ func getCurrentTime() -> String{
 }
 
 enum ORDER_STATUS{
-    case NOTACCEPT
     case ONGOING
     case CANCEL
     case FINISHED

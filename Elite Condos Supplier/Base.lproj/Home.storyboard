@@ -32,6 +32,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hiện tại không có đơn hàng nào" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-qm-BSi">
+                                <rect key="frame" x="0.0" y="218" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-29-Jhn">
                                 <rect key="frame" x="0.0" y="64" width="320" height="60"/>
                                 <subviews>
@@ -83,26 +90,26 @@
                                     <constraint firstItem="Qen-sD-G5l" firstAttribute="leading" secondItem="HP8-29-Jhn" secondAttribute="leading" id="fXI-vE-yVo"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-5y-cJ2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="191" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-5y-cJ2">
                                 <rect key="frame" x="0.0" y="124" width="320" height="356"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="134" id="fLc-dl-c5U" customClass="OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="134"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="191" id="fLc-dl-c5U" customClass="OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLc-dl-c5U" id="2jz-Lh-adf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="190.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="khoa" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-RX-4zD" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="37" width="60" height="60"/>
+                                                    <rect key="frame" x="8" y="42" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="1L4-k8-xQN"/>
                                                         <constraint firstAttribute="width" constant="60" id="6w0-xh-qod"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="......." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-SP-e5D">
-                                                    <rect key="frame" x="70" y="32" width="180" height="20"/>
+                                                    <rect key="frame" x="70" y="42" width="180" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="Kuk-uL-nPt"/>
                                                         <constraint firstAttribute="height" constant="20" id="W5H-ar-JUh"/>
@@ -112,7 +119,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55/1, đường 138, khu phố 2, Tân Phú, quận 9, Hồ Chí Minh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-Nt-hc9">
-                                                    <rect key="frame" x="70" y="56" width="180" height="42"/>
+                                                    <rect key="frame" x="70" y="70" width="180" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="OLu-hk-i2J"/>
                                                         <constraint firstAttribute="height" constant="42" id="PVJ-dC-5sb"/>
@@ -132,7 +139,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vLXogfAmFYrhmfBN4P9q" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9Q-tx-Min">
-                                                    <rect key="frame" x="8" y="103" width="250" height="20"/>
+                                                    <rect key="frame" x="8" y="117" width="250" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="WjC-ty-zfP"/>
                                                         <constraint firstAttribute="width" constant="250" id="XbQ-qJ-EMn"/>
@@ -141,18 +148,51 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="S7n-JW-Udx">
+                                                    <rect key="frame" x="132" y="152.5" width="180" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93N-ot-3gE" customClass="FancyBtn" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="30"/>
+                                                            <color key="backgroundColor" red="0.30588235289999999" green="0.69019607839999997" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <state key="normal" title="Chi tiết">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="detail_TouchInside:" destination="fLc-dl-c5U" eventType="touchUpInside" id="RMK-ni-Tc2"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbb-fk-47w" customClass="FancyBtn" customModule="Elite_Condos_Supplier" customModuleProvider="target">
+                                                            <rect key="frame" x="97.5" y="0.0" width="82.5" height="30"/>
+                                                            <color key="backgroundColor" red="0.89019607840000003" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <state key="normal" title="Từ chối">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="deny_TouchInside:" destination="fLc-dl-c5U" eventType="touchUpInside" id="E39-Sr-YfU"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="PpV-vc-0kj"/>
+                                                        <constraint firstAttribute="width" constant="180" id="d6I-2b-DKg"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5nw-SP-e5D" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="-25" id="9nK-aP-hCb"/>
+                                                <constraint firstAttribute="bottom" secondItem="S7n-JW-Udx" secondAttribute="bottom" constant="8" id="Etm-VS-Wgv"/>
                                                 <constraint firstItem="Vf7-88-fpZ" firstAttribute="top" secondItem="2jz-Lh-adf" secondAttribute="top" constant="2" id="F9B-f6-n1g"/>
                                                 <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="FDz-b0-xrS"/>
                                                 <constraint firstItem="B9Q-tx-Min" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="JJS-jV-5Cs"/>
-                                                <constraint firstItem="T0Z-RX-4zD" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" id="Jw3-RT-R0a"/>
                                                 <constraint firstItem="B9Q-tx-Min" firstAttribute="top" secondItem="QEI-Nt-hc9" secondAttribute="bottom" constant="5" id="KfV-Qs-ecz"/>
-                                                <constraint firstItem="QEI-Nt-hc9" firstAttribute="centerY" secondItem="2jz-Lh-adf" secondAttribute="centerY" constant="10" id="gPw-e9-s4o"/>
+                                                <constraint firstAttribute="trailing" secondItem="S7n-JW-Udx" secondAttribute="trailing" constant="8" id="L0p-y4-H2p"/>
+                                                <constraint firstItem="5nw-SP-e5D" firstAttribute="top" secondItem="Vf7-88-fpZ" secondAttribute="bottom" constant="20" id="fAP-Xx-xGU"/>
                                                 <constraint firstItem="Vf7-88-fpZ" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="hWg-QP-dlm"/>
                                                 <constraint firstItem="T0Z-RX-4zD" firstAttribute="leading" secondItem="2jz-Lh-adf" secondAttribute="leading" constant="8" id="mJQ-gv-GiY"/>
+                                                <constraint firstItem="T0Z-RX-4zD" firstAttribute="top" secondItem="Vf7-88-fpZ" secondAttribute="bottom" constant="20" id="mYO-XY-Sow"/>
                                                 <constraint firstItem="5nw-SP-e5D" firstAttribute="centerX" secondItem="2jz-Lh-adf" secondAttribute="centerX" id="muP-zF-lFg"/>
+                                                <constraint firstItem="QEI-Nt-hc9" firstAttribute="top" secondItem="5nw-SP-e5D" secondAttribute="bottom" constant="8" id="wD1-6T-YM4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -165,24 +205,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiện tại không có đơn hàng nào" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-qm-BSi">
-                                <rect key="frame" x="0.0" y="218.5" width="320" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="2Bc-gk-ddG"/>
-                                    <constraint firstAttribute="height" constant="43" id="wGV-DQ-wWc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BEc-5y-cJ2" firstAttribute="leading" secondItem="k13-V5-k2g" secondAttribute="leading" id="FVI-yg-HU9"/>
-                            <constraint firstItem="t5m-qm-BSi" firstAttribute="centerY" secondItem="k13-V5-k2g" secondAttribute="centerY" id="Pba-UW-Zh7"/>
                             <constraint firstItem="HP8-29-Jhn" firstAttribute="leading" secondItem="k13-V5-k2g" secondAttribute="leading" id="QDP-Uc-DAl"/>
                             <constraint firstAttribute="trailing" secondItem="BEc-5y-cJ2" secondAttribute="trailing" id="fyw-sV-4ff"/>
-                            <constraint firstItem="t5m-qm-BSi" firstAttribute="centerX" secondItem="k13-V5-k2g" secondAttribute="centerX" id="gQI-d7-k2g"/>
                             <constraint firstItem="BEc-5y-cJ2" firstAttribute="top" secondItem="HP8-29-Jhn" secondAttribute="bottom" id="lkj-DH-8cB"/>
                             <constraint firstAttribute="trailing" secondItem="HP8-29-Jhn" secondAttribute="trailing" id="on0-Rx-s2w"/>
                             <constraint firstItem="HP8-29-Jhn" firstAttribute="top" secondItem="0Xl-zM-hRb" secondAttribute="bottom" id="qhj-En-KiV"/>
@@ -196,12 +224,65 @@
                         <outlet property="menuBarButton" destination="sdf-jC-EYo" id="d9j-2d-3pi"/>
                         <outlet property="noOrderLbl" destination="t5m-qm-BSi" id="Wol-uw-BwH"/>
                         <outlet property="tableView" destination="BEc-5y-cJ2" id="AqJ-C1-RZX"/>
-                        <segue destination="bxP-wt-H9i" kind="show" identifier="PickEmployeeVC" id="rYH-kS-isS"/>
+                        <segue destination="Wjd-hL-vah" kind="show" identifier="HomeToOrderDetail" id="omf-HX-fP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-bI-9xF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3188" y="2149"/>
+            <point key="canvasLocation" x="-3189.375" y="2148.75"/>
+        </scene>
+        <!--Chi Tiết-->
+        <scene sceneID="TPN-C6-Cum">
+            <objects>
+                <viewController id="Wjd-hL-vah" customClass="OrderDetailVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BcY-3T-aAH"/>
+                        <viewControllerLayoutGuide type="bottom" id="jEt-QU-OwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GrW-T8-BbT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI1-al-Vgu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="736"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abK-Hu-mKK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEO-tX-MSy">
+                                        <rect key="frame" x="33" y="116" width="206" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="800" id="BRN-Lb-xbb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jEt-QU-OwX" firstAttribute="top" secondItem="FI1-al-Vgu" secondAttribute="bottom" id="BPH-7j-nGX"/>
+                            <constraint firstItem="abK-Hu-mKK" firstAttribute="leading" secondItem="FI1-al-Vgu" secondAttribute="leading" id="EdN-ZD-Rgx"/>
+                            <constraint firstAttribute="trailing" secondItem="FI1-al-Vgu" secondAttribute="trailing" id="I5C-XT-B1b"/>
+                            <constraint firstItem="abK-Hu-mKK" firstAttribute="bottom" secondItem="jEt-QU-OwX" secondAttribute="top" id="Qyy-sA-z56"/>
+                            <constraint firstItem="abK-Hu-mKK" firstAttribute="width" secondItem="GrW-T8-BbT" secondAttribute="width" id="eAU-Gf-FyP"/>
+                            <constraint firstItem="FI1-al-Vgu" firstAttribute="top" secondItem="BcY-3T-aAH" secondAttribute="bottom" id="fyA-kf-9Yn"/>
+                            <constraint firstItem="FI1-al-Vgu" firstAttribute="leading" secondItem="GrW-T8-BbT" secondAttribute="leading" id="lEv-hs-zwQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chi Tiết" id="GJN-gd-XPq">
+                        <barButtonItem key="backBarButtonItem" title="Trở về" id="aqV-e4-xG8"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4f-We-Frq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2154.375" y="2225"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oO5-KX-UZR">
@@ -221,95 +302,9 @@
             </objects>
             <point key="canvasLocation" x="-3947" y="2149"/>
         </scene>
-        <!--Quản Lý Nhân Viên-->
-        <scene sceneID="LDg-qZ-dbn">
-            <objects>
-                <viewController id="bxP-wt-H9i" customClass="PickEmployeeVC" customModule="Elite_Condos_Supplier" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YJW-Co-Vkv"/>
-                        <viewControllerLayoutGuide type="bottom" id="IaE-6R-v2j"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qlc-c8-PFp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rBb-4g-tDN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell2" rowHeight="124" id="NdQ-kC-t8a" customClass="EmployeeCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="124"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdQ-kC-t8a" id="50I-B2-C91">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nhanvien1" translatesAutoresizingMaskIntoConstraints="NO" id="sze-bs-NsP" customClass="CircleImage" customModule="Elite_Condos_Supplier" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="26" width="72" height="72"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="GC2-ma-UUh"/>
-                                                        <constraint firstAttribute="width" constant="72" id="X7D-pn-4Rc"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-Cy-DS9">
-                                                    <rect key="frame" x="97" y="26" width="180" height="72"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Văn Khoa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxk-x2-2YS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01647778182" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5P-I1-6L3">
-                                                            <rect key="frame" x="0.0" y="38" width="180" height="34"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="180" id="UUH-rl-jN1"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="sze-bs-NsP" firstAttribute="centerY" secondItem="50I-B2-C91" secondAttribute="centerY" id="Id5-g5-EDW"/>
-                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="height" secondItem="sze-bs-NsP" secondAttribute="height" id="JPL-Bm-9Oi"/>
-                                                <constraint firstItem="sze-bs-NsP" firstAttribute="leading" secondItem="50I-B2-C91" secondAttribute="leading" constant="10" id="gSo-m8-Sov"/>
-                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="centerY" secondItem="sze-bs-NsP" secondAttribute="centerY" id="rbZ-NZ-zU6"/>
-                                                <constraint firstItem="Tyz-Cy-DS9" firstAttribute="leading" secondItem="sze-bs-NsP" secondAttribute="trailing" constant="15" id="sxg-bi-xBu"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="avatarImage" destination="sze-bs-NsP" id="6vY-3G-Znm"/>
-                                            <outlet property="nameLbl" destination="uxk-x2-2YS" id="A37-77-cQH"/>
-                                            <outlet property="phoneLbl" destination="X5P-I1-6L3" id="BRN-fR-4xB"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="rBb-4g-tDN" secondAttribute="trailing" id="TgZ-Zv-8lp"/>
-                            <constraint firstItem="rBb-4g-tDN" firstAttribute="top" secondItem="qlc-c8-PFp" secondAttribute="top" id="bn8-ft-r9a"/>
-                            <constraint firstItem="rBb-4g-tDN" firstAttribute="leading" secondItem="qlc-c8-PFp" secondAttribute="leading" id="qjC-nh-J83"/>
-                            <constraint firstItem="IaE-6R-v2j" firstAttribute="top" secondItem="rBb-4g-tDN" secondAttribute="bottom" id="t1k-hG-AiT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Quản Lý Nhân Viên" id="RLg-TK-Jtt"/>
-                    <connections>
-                        <outlet property="tableView" destination="rBb-4g-tDN" id="63g-e5-u2w"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iub-dr-wW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3189" y="2949"/>
-        </scene>
     </scenes>
     <resources>
         <image name="icon_menu_24dp" width="24" height="24"/>
         <image name="khoa" width="720" height="720"/>
-        <image name="nhanvien1" width="1632" height="2048"/>
     </resources>
 </document>
