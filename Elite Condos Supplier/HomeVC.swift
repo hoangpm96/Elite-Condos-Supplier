@@ -20,7 +20,8 @@ class HomeVC: UIViewController {
     var isOnGoingClicked = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         if self.revealViewController() != nil{
             menuBarButton.target = self.revealViewController()
             menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -53,7 +54,6 @@ class HomeVC: UIViewController {
             
         })
         
-        tableView.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -91,20 +91,73 @@ class HomeVC: UIViewController {
             
         })
     }
-    @IBAction func ongoingBtn(_ sender: Any) {
+    @IBAction func newBtn_TouchInside(_ sender: Any) {
         fetchOrders(orderStatus: 0)
     }
-    
-    @IBAction func cancelBtn(_ sender: Any) {
+    @IBAction func ongoingBtn(_ sender: Any) {
         fetchOrders(orderStatus: 1)
     }
     
-    @IBAction func finishBtn(_ sender: Any) {
+    @IBAction func cancelBtn(_ sender: Any) {
         fetchOrders(orderStatus: 2)
     }
     
+    @IBAction func finishBtn(_ sender: Any) {
+        fetchOrders(orderStatus: 3)
+    }
+    
 }
-
+extension HomeVC: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let status = orders[indexPath.row].status
+        
+        // NOT ACCEPTED:
+        if status == 0 {
+            
+            let alert = UIAlertController(title: APP_NAME, message: "Action", preferredStyle: .alert)
+            
+            let cancel = UIAlertAction(title: "Từ chối đơn hàng", style: .default, handler: { action in
+                // cancel api here - reload tableview
+                Api.Order.denyOrder(at: self.orders[indexPath.row].id, onSuccess: {
+                    print("OK")
+                })
+            })
+            
+            let accept = UIAlertAction(title: "Đồng ý đơn hàng", style: .default, handler: { action in
+                
+                Api.Order.acceptOrder(at: self.orders[indexPath.row].id, onSuccess: {
+                    
+                })
+                
+            })
+            let dismiss = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alert.addAction(cancel)
+            alert.addAction(accept)
+            alert.addAction(dismiss)
+            present(alert, animated: true, completion: nil)
+            
+        }else if status == 1 {
+            let alert = UIAlertController(title: APP_NAME, message: "Action", preferredStyle: .alert)
+            
+            let cancel = UIAlertAction(title: "Hủy đơn hàng", style: .default, handler: { action in
+                // cancel api here - reload tableview
+                Api.Order.cancelOrder(at: self.orders[indexPath.row].id, onSuccess: { 
+                    
+                })
+            })
+            
+            let accept = UIAlertAction(title: "Hoàn thành công việc", style: .default, handler: { action in
+                // ok api here - reload tableview - move to detail orders
+            })
+            let dismiss = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            alert.addAction(accept)
+            alert.addAction(dismiss)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+}
 extension HomeVC: UITableViewDataSource{
     // MARK: Tableview
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -129,12 +182,12 @@ extension HomeVC: OrderCellDelegate{
     func moveToDetail(orderId: String) {
         performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
     }
-    func denyOrder(orderId: String) {
-        Api.Order.denyOrder(at: orderId) { 
-            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
-        }
-        print(ORDER_STATUS.CANCEL.hashValue)
-    }
+//    func denyOrder(orderId: String) {
+//        Api.Order.denyOrder(at: orderId) { 
+//            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
+//        }
+//        print(ORDER_STATUS.CANCEL.hashValue)
+//    }
     
 }
 

@@ -17,11 +17,31 @@ class OrderApi{
     var subService = ""
     
     var serviceId = ""
+  
     
+    // finish order
+    func finishOrder(at id: String, onSuccess: @escaping () -> Void ){
+        FirRef.ORDERS.child(id).updateChildValues(["status": 4])
+        onSuccess()
+    }
+    
+    // accept order
+    func cancelOrder(at id: String, onSuccess: @escaping () -> Void ){
+        FirRef.ORDERS.child(id).updateChildValues(["status": 3])
+        onSuccess()
+    }
+    
+    // accept order 
+    func acceptOrder(at id: String, onSuccess: @escaping () -> Void ){
+        FirRef.ORDERS.child(id).updateChildValues(["status": 1])
+        onSuccess()
+    }
     
     // deny order
     func denyOrder(at id: String, onSuccess: @escaping () -> Void ){
-        FirRef.ORDERS.child(id).updateChildValues(["status": ORDER_STATUS.CANCEL.hashValue])
+        let currentId = Api.User.currentUid()
+        FirRef.ORDERS.child(id).removeValue()
+        FirRef.SUPPLIER_ORDERS.child(currentId).child(id).removeValue()
         onSuccess()
     }
     

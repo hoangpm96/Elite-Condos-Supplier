@@ -12,12 +12,10 @@ import Firebase
 
 protocol OrderCellDelegate{
     func moveToDetail(orderId: String)
-    func denyOrder(orderId: String)
 }
 class OrderCell: UITableViewCell {
     
     @IBOutlet weak var detailButton: FancyBtn!
-    @IBOutlet weak var denyButton: FancyBtn!
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var customerAvatarImg: CircleImage!
@@ -31,10 +29,6 @@ class OrderCell: UITableViewCell {
         didSet{
             print("truoc")
             updateView()
-            
-            if order?.status == ORDER_STATUS.CANCEL.hashValue || order?.status == ORDER_STATUS.FINISHED.hashValue{
-                denyButton.isHidden = true
-            }
         }
     }
     override func awakeFromNib() {
@@ -64,10 +58,7 @@ class OrderCell: UITableViewCell {
             self.customerAvatarImg.image = img
         }
     }
-    @IBAction func deny_TouchInside(_ sender: Any) {
-        delegate?.denyOrder(orderId: (order?.id)!)
-    }
-    
+
     
     @IBAction func detail_TouchInside(_ sender: Any) {
         delegate?.moveToDetail(orderId: (order?.id)!)
