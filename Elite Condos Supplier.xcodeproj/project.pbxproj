@@ -14,6 +14,8 @@
 		D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */; };
 		D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D70491E7D7D6C005BB528 /* ServiceCell.swift */; };
 		D21D704C1E7D7D94005BB528 /* ServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D704B1E7D7D94005BB528 /* ServiceData.swift */; };
+		D225D3251EA306C300D4D562 /* PriceTagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225D3241EA306C300D4D562 /* PriceTagVC.swift */; };
+		D225D3271EA3086200D4D562 /* PriceTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D225D3261EA3086200D4D562 /* PriceTagCell.swift */; };
 		D22601E01EA1062A0057D7D9 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */; };
 		D22DC2F51E6FA5CD00075D9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F31E6FA5CD00075D9F /* Main.storyboard */; };
 		D22DC2F81E6FB21C00075D9F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22DC2F61E6FB21C00075D9F /* Home.storyboard */; };
@@ -71,6 +73,8 @@
 		D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSettingVC.swift; sourceTree = "<group>"; };
 		D21D70491E7D7D6C005BB528 /* ServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		D21D704B1E7D7D94005BB528 /* ServiceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceData.swift; sourceTree = "<group>"; };
+		D225D3241EA306C300D4D562 /* PriceTagVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTagVC.swift; sourceTree = "<group>"; };
+		D225D3261EA3086200D4D562 /* PriceTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceTagCell.swift; sourceTree = "<group>"; };
 		D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		D22DC2F41E6FA5CD00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22DC2F71E6FB21C00075D9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 				D28EE7CE1DD9762900BCE1E9 /* StartVC.swift */,
 				D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */,
 				D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */,
+				D225D3241EA306C300D4D562 /* PriceTagVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				D25556D01DDA84D6004E7649 /* SupplierCell.swift */,
 				D2154FB81DE88DC700D0DF23 /* OrderCell.swift */,
 				D21D70491E7D7D6C005BB528 /* ServiceCell.swift */,
+				D225D3261EA3086200D4D562 /* PriceTagCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				D2A25F041E7198B2008DE38A /* ServiceApi.swift in Sources */,
 				D28EE7C61DD95A9600BCE1E9 /* FancyField.swift in Sources */,
 				D2BF5B081DCEE2AF002534EC /* SWRevealViewController.m in Sources */,
+				D225D3271EA3086200D4D562 /* PriceTagCell.swift in Sources */,
 				D23ECC161DF1A9F2002B6E1D /* CosmosDistrib.swift in Sources */,
 				D2A25F001E7177E0008DE38A /* FirRef.swift in Sources */,
 				D25556CF1DDA7A88004E7649 /* Supplier.swift in Sources */,
@@ -471,6 +478,7 @@
 				D28EE7CD1DD9731000BCE1E9 /* LoginVC.swift in Sources */,
 				D28EE7CF1DD9762900BCE1E9 /* StartVC.swift in Sources */,
 				D25556D11DDA84D6004E7649 /* SupplierCell.swift in Sources */,
+				D225D3251EA306C300D4D562 /* PriceTagVC.swift in Sources */,
 				D28932501E703FB4001816AA /* AuthService.swift in Sources */,
 				D25556C81DD9C56D004E7649 /* Errors.swift in Sources */,
 				D25556C41DD9B9C4004E7649 /* DataService.swift in Sources */,

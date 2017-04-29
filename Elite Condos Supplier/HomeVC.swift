@@ -106,6 +106,16 @@ class HomeVC: UIViewController {
         fetchOrders(orderStatus: 3)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HomeToPriceTag"{
+            if let priceTagVC = segue.destination as? PriceTagVC{
+                if let id = sender as? String{
+                    priceTagVC.orderId = id
+                }
+            }
+        }
+    }
+    
 }
 extension HomeVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -149,6 +159,7 @@ extension HomeVC: UITableViewDelegate{
             
             let accept = UIAlertAction(title: "Hoàn thành công việc", style: .default, handler: { action in
                 // ok api here - reload tableview - move to detail orders
+                self.performSegue(withIdentifier: "HomeToPriceTag", sender: self.orders[indexPath.row].id)
             })
             let dismiss = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alert.addAction(cancel)

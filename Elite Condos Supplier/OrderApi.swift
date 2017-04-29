@@ -19,6 +19,19 @@ class OrderApi{
     var serviceId = ""
   
     
+    // add price tag
+    func addPriceTag(orderId: String, priceTagData : Dictionary<String,Any>){
+        let randomId = randomString(length: 12)
+        
+        FirRef.ORDERS.child(orderId).child("pricetag").child(randomId).updateChildValues(priceTagData)
+//        REF_SERVICES.child(serviceId).child("pricetag").child(randomId).updateChildValues(priceTagData)
+//        REF_SUPPLIERS.child(supplierId).child("services").child(serviceId).child("pricetag").child(randomId).updateChildValues(priceTagData)
+        
+    }
+
+    
+    
+    
     // finish order
     func finishOrder(at id: String, onSuccess: @escaping () -> Void ){
         FirRef.ORDERS.child(id).updateChildValues(["status": 4])
