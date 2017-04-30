@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 class PriceTagVC: UIViewController {
-    @IBOutlet weak var orderInfoLbl : UILabel!
     @IBOutlet weak var priceTF: FancyField!
     @IBOutlet weak var tagNameTF: FancyField!
     @IBOutlet weak var tableView: UITableView!
@@ -19,23 +18,8 @@ class PriceTagVC: UIViewController {
     var priceTags = [PriceTag]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orderInfoLbl.text = "#\(orderId)"
-            
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-//        DataService.ds.REF_SERVICES.child(serviceId).observeSingleEvent(of: .value, with: {
-//            snapshot in
-//            
-//            if let snapData = snapshot.value as? Dictionary<String,Any>{
-//                if let serviceName = snapData["name"] as? String{
-//                    self.serviceNameLbl.text = serviceName
-//                }
-//            }
-//        })
-        
         FirRef.ORDERS.child(orderId).child("pricetag").observe(.value, with:
             {
                 
