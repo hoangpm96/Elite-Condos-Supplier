@@ -51,6 +51,15 @@ class PriceTagVC: UIViewController {
         self.view.endEditing(true)
     }
     @IBAction func confirm_TouchUpInside(_ sender: Any) {
+        
+        
+        
+      Api.Order.finishOrder(orderId: orderId, total: total) { 
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
+        
     }
     
     
