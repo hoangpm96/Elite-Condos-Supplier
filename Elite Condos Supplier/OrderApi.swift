@@ -24,12 +24,15 @@ class OrderApi{
         let randomId = randomString(length: 12)
         
         FirRef.ORDERS.child(orderId).child("pricetag").child(randomId).updateChildValues(priceTagData)
-//        REF_SERVICES.child(serviceId).child("pricetag").child(randomId).updateChildValues(priceTagData)
-//        REF_SUPPLIERS.child(supplierId).child("services").child(serviceId).child("pricetag").child(randomId).updateChildValues(priceTagData)
-        
     }
 
     
+    // delete price tag
+    func deletePriceTag(orderId: String, priceTagId: String){
+        
+        FirRef.ORDERS.child(orderId).child("pricetag").child(priceTagId)
+        .removeValue()
+    }
     
     
     // finish order

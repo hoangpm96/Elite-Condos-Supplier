@@ -11,39 +11,45 @@ import UIKit
 import Firebase
 class PriceTagVC: UIViewController {
     @IBOutlet weak var priceTF: FancyField!
+    @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var tagNameTF: FancyField!
     @IBOutlet weak var tableView: UITableView!
     var orderId = ""
     var serviceId = ""
+    var total = 0.0
     var priceTags = [PriceTag]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        FirRef.ORDERS.child(orderId).child("pricetag").observe(.value, with:
-            {
-                
-                snapshot in
-                print("here tag")
-                print(snapshot)
-                self.priceTags = []
-                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
-                    
-                    for snap in snapshots{
+        FirRef.ORDERS.child(orderId).child("pricetag").observe(.value, with:  { (snapshot) in
+        
+            self.priceTags = []
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshots{
+                    if let snapData = snap.value as? Dictionary<String,Any>{
                         
-                        if let snapData = snap.value as? Dictionary<String,Any>{
-                            
-                            let priceTag = PriceTag(id: snap.key, data: snapData)
-                            self.priceTags.append(priceTag)
-                        }
+                        let priceTag = PriceTag(id: snap.key, data: snapData)
+                        self.priceTags.append(priceTag)
                     }
-                    self.tableView.reloadData()
                 }
+                self.tableView.reloadData()
+                self.calulateTotal()
+            }
         })
         
     }
-    
-    
+    func calulateTotal(){
+        total = 0.0
+        for pricetag in priceTags{
+            total += pricetag.price
+        }
+        totalLbl.text = "\(total) VNĐ"
+        self.tableView.reloadData()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     @IBAction func confirm_TouchUpInside(_ sender: Any) {
     }
     
@@ -58,7 +64,7 @@ class PriceTagVC: UIViewController {
             showAlert(title: APP_NAME, message: "Bạn chưa nhập mức giá")
             return
         }
-       
+        
         print("name= \(name) -- price \(price)")
         guard let dPrice = Double(price) else {
             return
@@ -66,22 +72,17 @@ class PriceTagVC: UIViewController {
         
         let priceData: [String:Any] = ["name" : name, "price" : dPrice ]
         Api.Order.addPriceTag(orderId: orderId, priceTagData: priceData )
-
+        
         let alert = UIAlertController(title: APP_NAME, message: "Thêm bảng giá thành công!", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Tiếp tục thêm", style: .default, handler: {
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {
             action in
             self.tableView.reloadData()
+            self.calulateTotal()
             
         })
-        let backAction = UIAlertAction(title: "Quay về", style: .default, handler: {
-            action in
-            self.dismiss(animated: true, completion: nil)
-        }
-        )
         
         alert.addAction(okAction)
-        alert.addAction(backAction)
         present(alert, animated: true, completion: nil)
         
         
@@ -108,18 +109,15 @@ extension PriceTagVC: UITableViewDelegate{
             
             let priceTagId = priceTags[indexPath.row].id
             
-            
-            FirRef.ORDERS.child(orderId).child("pricetag").child(priceTagId!).removeValue()
-            //services.remove(at: indexPath.row)
-            
-            
+            Api.Order.deletePriceTag(orderId: orderId, priceTagId: priceTagId)
             tableView.reloadData()
+            calulateTotal()
         }
     }
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Xóa"
     }
-
+    
 }
 extension PriceTagVC: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -139,5 +137,5 @@ extension PriceTagVC: UITableViewDataSource{
         
         
     }
-
+    
 }
