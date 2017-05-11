@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class ServiceSettingVC: UIViewController {
 
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
@@ -36,19 +36,21 @@ extension ServiceSettingVC: UITableViewDataSource{
         return services.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath) as! ServiceCell
         cell.service = services[indexPath.row]
         
         
         Api.Service.checkExist(service: services[indexPath.row], onFound: { 
             cell.changeSubscribeLabel(value: true)
+            ProgressHUD.showSuccess("Xong")
         }, notFound: { 
             cell.changeSubscribeLabel(value: false)
         }) { (error) in
             print(error)
+            ProgressHUD.dismiss()
         }
-    
-       
         return cell
     
     }

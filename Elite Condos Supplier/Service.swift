@@ -9,10 +9,12 @@
 import Foundation
 
 class Service {
+    
+    var hasService: Bool?
     private var _serviceId : String!
     private var _name : String!
     private var _supplierId : String!
-
+    
     
     var serviceId : String{
         return _serviceId

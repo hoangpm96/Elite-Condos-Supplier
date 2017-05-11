@@ -30,8 +30,6 @@ class ServiceCell: UITableViewCell {
             serviceName.text = name
             
         }
-        
-        
         if let img = service?.imgUrl{
             serviceImage.image = UIImage(named: img)
         }
@@ -47,9 +45,6 @@ class ServiceCell: UITableViewCell {
             subscribeLbl.text = "UnSubscribed"
             
         }
-        
-        
-        
     }
     
 }
