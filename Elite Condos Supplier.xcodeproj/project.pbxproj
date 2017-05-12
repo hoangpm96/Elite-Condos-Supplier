@@ -31,6 +31,8 @@
 		D25556CC1DDA0D3B004E7649 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25556CA1DDA0D3B004E7649 /* Start.storyboard */; };
 		D25556CF1DDA7A88004E7649 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25556CE1DDA7A88004E7649 /* Supplier.swift */; };
 		D25556D11DDA84D6004E7649 /* SupplierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25556D01DDA84D6004E7649 /* SupplierCell.swift */; };
+		D26A50681EA34F4E009B6BD0 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A50671EA34F4E009B6BD0 /* ReviewVC.swift */; };
+		D26A506A1EA353C1009B6BD0 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A50691EA353C1009B6BD0 /* ReviewCell.swift */; };
 		D27C639F1DDC308B00B705CB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C639E1DDC308B00B705CB /* SignUpVC.swift */; };
 		D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */; };
 		D27C63A31DDC398300B705CB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A21DDC398300B705CB /* HomeVC.swift */; };
@@ -93,6 +95,8 @@
 		D25556CB1DDA0D3B004E7649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Start.storyboard; sourceTree = "<group>"; };
 		D25556CE1DDA7A88004E7649 /* Supplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
 		D25556D01DDA84D6004E7649 /* SupplierCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierCell.swift; sourceTree = "<group>"; };
+		D26A50671EA34F4E009B6BD0 /* ReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
+		D26A50691EA353C1009B6BD0 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		D27C639E1DDC308B00B705CB /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
 		D27C63A21DDC398300B705CB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				D28EE7C31DD95A9600BCE1E9 /* FancyView.swift */,
 				D28EE7C41DD95A9600BCE1E9 /* RoundBtn.swift */,
 				D205619E1DD70A4D008B7EB5 /* CircleImage.swift */,
+				D26A50691EA353C1009B6BD0 /* ReviewCell.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				D21D70471E7D7CC9005BB528 /* ServiceSettingVC.swift */,
 				D22601DF1EA1062A0057D7D9 /* OrderDetailVC.swift */,
 				D225D3241EA306C300D4D562 /* PriceTagVC.swift */,
+				D26A50671EA34F4E009B6BD0 /* ReviewVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -455,7 +461,9 @@
 				D28EE7C71DD95A9600BCE1E9 /* FancyView.swift in Sources */,
 				D205619F1DD70A4D008B7EB5 /* CircleImage.swift in Sources */,
 				D24459261DDDF2FB00F51EE6 /* Service.swift in Sources */,
+				D26A506A1EA353C1009B6BD0 /* ReviewCell.swift in Sources */,
 				D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */,
+				D26A50681EA34F4E009B6BD0 /* ReviewVC.swift in Sources */,
 				D24459241DDDED4200F51EE6 /* RandomString.swift in Sources */,
 				D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */,
 				D2E6874D1EA0BEA4001E99B1 /* PriceTag.swift in Sources */,

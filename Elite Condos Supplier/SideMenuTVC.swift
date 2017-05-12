@@ -11,7 +11,6 @@ import Firebase
 class SideMenuTVC: UITableViewController {
 
     @IBOutlet weak var statisticsCell: UITableViewCell!
-    @IBOutlet weak var employeeCell: UITableViewCell!
     @IBOutlet weak var serviceNameLbl: UILabel!
     @IBOutlet weak var logoImage: CircleImage!
     override func viewDidLoad() {
@@ -56,10 +55,10 @@ class SideMenuTVC: UITableViewController {
 
     }
     func configureActionForCell(){
-        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
-        employeeCell.addGestureRecognizer(employeeTapped)
-        employeeCell.isUserInteractionEnabled = true
-        
+//        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
+//        employeeCell.addGestureRecognizer(employeeTapped)
+//        employeeCell.isUserInteractionEnabled = true
+//        
         let statisticsTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
         statisticsCell.addGestureRecognizer(statisticsTapped)
         statisticsCell.isUserInteractionEnabled = true
