@@ -16,9 +16,39 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var reviewStar: CosmosView!
     @IBOutlet weak var profileImage: UIImageView!
+    
+    var review: Review?{
+        didSet{
+            updateView()
+        }
+    }
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = 15.0
+    }
+    func updateView(){
+        timeLbl.text = review?.time
+        reviewContentTextView.text = review?.reviewContent
+       
+        if let money = review?.moneyAmount {
+                totalPrice.text  = "\(money) VNĐ"
+        }
+        usernameLbl.text = review?.username
+        
+        if let rating = review?.ratingStars{
+            reviewStar.rating = rating
+        
+        }
+        
+        if let imgUrl = review?.imgUrl{
+            let url = URL(string: imgUrl)
+             profileImage.sd_setImage(with: url)
+        }
+        
+    
+        
+        
+        
     }
 
 

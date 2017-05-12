@@ -33,6 +33,8 @@
 		D25556D11DDA84D6004E7649 /* SupplierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25556D01DDA84D6004E7649 /* SupplierCell.swift */; };
 		D26A50681EA34F4E009B6BD0 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A50671EA34F4E009B6BD0 /* ReviewVC.swift */; };
 		D26A506A1EA353C1009B6BD0 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A50691EA353C1009B6BD0 /* ReviewCell.swift */; };
+		D26A506C1EA35470009B6BD0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A506B1EA35470009B6BD0 /* Review.swift */; };
+		D26A50701EA363E9009B6BD0 /* ReviewApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A506F1EA363E9009B6BD0 /* ReviewApi.swift */; };
 		D27C639F1DDC308B00B705CB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C639E1DDC308B00B705CB /* SignUpVC.swift */; };
 		D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */; };
 		D27C63A31DDC398300B705CB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A21DDC398300B705CB /* HomeVC.swift */; };
@@ -97,6 +99,8 @@
 		D25556D01DDA84D6004E7649 /* SupplierCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplierCell.swift; sourceTree = "<group>"; };
 		D26A50671EA34F4E009B6BD0 /* ReviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		D26A50691EA353C1009B6BD0 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		D26A506B1EA35470009B6BD0 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		D26A506F1EA363E9009B6BD0 /* ReviewApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewApi.swift; sourceTree = "<group>"; };
 		D27C639E1DDC308B00B705CB /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
 		D27C63A21DDC398300B705CB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				D24459251DDDF2FB00F51EE6 /* Service.swift */,
 				D2154FBA1DE91D5600D0DF23 /* Order.swift */,
 				D21D704B1E7D7D94005BB528 /* ServiceData.swift */,
+				D26A506B1EA35470009B6BD0 /* Review.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				D25556C31DD9B9C4004E7649 /* DataService.swift */,
 				D2A25EFF1E7177E0008DE38A /* FirRef.swift */,
 				D2E6874A1EA0BDDF001E99B1 /* OrderApi.swift */,
+				D26A506F1EA363E9009B6BD0 /* ReviewApi.swift */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				D26A506A1EA353C1009B6BD0 /* ReviewCell.swift in Sources */,
 				D21D70481E7D7CC9005BB528 /* ServiceSettingVC.swift in Sources */,
 				D26A50681EA34F4E009B6BD0 /* ReviewVC.swift in Sources */,
+				D26A506C1EA35470009B6BD0 /* Review.swift in Sources */,
 				D24459241DDDED4200F51EE6 /* RandomString.swift in Sources */,
 				D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */,
 				D2E6874D1EA0BEA4001E99B1 /* PriceTag.swift in Sources */,
@@ -477,6 +484,7 @@
 				D28EE7C81DD95A9600BCE1E9 /* RoundBtn.swift in Sources */,
 				D2A25F041E7198B2008DE38A /* ServiceApi.swift in Sources */,
 				D28EE7C61DD95A9600BCE1E9 /* FancyField.swift in Sources */,
+				D26A50701EA363E9009B6BD0 /* ReviewApi.swift in Sources */,
 				D2BF5B081DCEE2AF002534EC /* SWRevealViewController.m in Sources */,
 				D225D3271EA3086200D4D562 /* PriceTagCell.swift in Sources */,
 				D23ECC161DF1A9F2002B6E1D /* CosmosDistrib.swift in Sources */,

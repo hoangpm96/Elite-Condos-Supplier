@@ -27,6 +27,9 @@ struct FirRef {
     static let CUSTOMER_ORDERS = DB_BASE.child("customer-orders")
     
     
+    static let REVIEWS = DB_BASE.child("reviews")
+    static let SUPPLIER_REVIEWS = DB_BASE.child("supplier-reviews")
+    
     // Storage references
     static  let POST_IMAGES = STORAGE_BASE.child("post-pics")
     static  let ORDER_IMAGES = STORAGE_BASE.child("order-pics")
