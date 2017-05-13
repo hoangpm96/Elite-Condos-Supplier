@@ -55,9 +55,10 @@ class OrderApi{
     
     // deny order
     func denyOrder(at id: String, onSuccess: @escaping () -> Void ){
-        let currentId = Api.User.currentUid()
-        FirRef.ORDERS.child(id).removeValue()
-        FirRef.SUPPLIER_ORDERS.child(currentId).child(id).removeValue()
+//        let currentId = Api.User.currentUid()
+//        FirRef.ORDERS.child(id).removeValue()
+//        FirRef.SUPPLIER_ORDERS.child(currentId).child(id).removeValue()
+        FirRef.ORDERS.child(id).updateChildValues(["status": 4])
         onSuccess()
     }
     

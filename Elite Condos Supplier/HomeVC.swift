@@ -27,6 +27,7 @@ class HomeVC: UIViewController {
             menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
         ProgressHUD.show("Đang tải dữ liệu...")
         FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
             print(snapshots)
@@ -92,18 +93,18 @@ class HomeVC: UIViewController {
         })
     }
     @IBAction func newBtn_TouchInside(_ sender: Any) {
-        fetchOrders(orderStatus: 0)
+        fetchOrders(orderStatus: ORDER_STATUS.NOTACCEPTED.hashValue)
     }
     @IBAction func ongoingBtn(_ sender: Any) {
-        fetchOrders(orderStatus: 1)
+        fetchOrders(orderStatus: ORDER_STATUS.ONGOING.hashValue)
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
-        fetchOrders(orderStatus: 2)
+        fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
     }
     
     @IBAction func finishBtn(_ sender: Any) {
-        fetchOrders(orderStatus: 3)
+        fetchOrders(orderStatus: ORDER_STATUS.FINISHED.hashValue)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
