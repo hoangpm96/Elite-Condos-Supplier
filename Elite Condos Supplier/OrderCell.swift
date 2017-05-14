@@ -49,6 +49,10 @@ class OrderCell: UITableViewCell {
         customerAddressLbl.text = order?.serviceName
         orderIdLbl.text = "# \((order?.id)!)"
         
+        
+        timeLbl.text = order?.time
+        
+        
         Api.Order.getCustomerName(id: (order?.customerId)!) { (name) in
             self.customerNameLbl.text  = name
         }

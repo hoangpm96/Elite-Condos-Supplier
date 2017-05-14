@@ -16,7 +16,11 @@ class Order  {
     private var _supplierId : String!
     private var _employeeId : String!
     private var _status : Int!
+    private var _time: String!
     
+    var time: String{
+        return _time
+    }
     
     var id : String{
         return _id
@@ -57,6 +61,9 @@ class Order  {
         }
         if let serviceName = data["serviceName"] as? String{
             self._serviceName = serviceName
+        }
+        if let time = data["created_at"] as? String{
+            self._time = time
         }
     }
     

@@ -15,7 +15,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var noOrderLbl: UILabel!
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
-    
     var orders = [Order]()
     var isOnGoingClicked = true
     override func viewDidLoad() {
@@ -30,32 +29,33 @@ class HomeVC: UIViewController {
         
         let currenId = Api.User.currentUid()
         
-        ProgressHUD.show("Đang tải dữ liệu...")
-        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
-            print(snapshots)
-            
-            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
-                self.orders.removeAll()
-                for orderSnapshot in snapshots{
-                    if let dict = orderSnapshot.value as? [String:Any]{
-                        print(dict)
-                        if let status = dict["status"] as? Int{
-                            if status == 0 {
-                                print("alo \(status)")
-                                let order = Order(id: orderSnapshot.key, data: dict)
-                                self.orders.append(order)
-                            }
-                        }
-                    }
-                    
-                }
-                ProgressHUD.dismiss()
-                self.tableView.reloadData()
-            }
-            
-            
-            
-        })
+        fetchNewOrders()
+//        ProgressHUD.show("Đang tải dữ liệu...")
+//        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
+//            print(snapshots)
+//            
+//            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+//                self.orders.removeAll()
+//                for orderSnapshot in snapshots{
+//                    if let dict = orderSnapshot.value as? [String:Any]{
+//                        print(dict)
+//                        if let status = dict["status"] as? Int{
+//                            if status == 0 {
+//                                print("alo \(status)")
+//                                let order = Order(id: orderSnapshot.key, data: dict)
+//                                self.orders.append(order)
+//                            }
+//                        }
+//                    }
+//                    
+//                }
+//                ProgressHUD.dismiss()
+//                self.tableView.reloadData()
+//            }
+//            
+//            
+//            
+//        })
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +67,8 @@ class HomeVC: UIViewController {
     func fetchOrders(orderStatus: Int){
          let currenId = Api.User.currentUid()
         ProgressHUD.show("Đang tải dữ liệu...")
+        
+        
         FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
             print(snapshots)
             
@@ -94,8 +96,40 @@ class HomeVC: UIViewController {
             
         })
     }
+    
+    
+    func fetchNewOrders(){
+        
+        ProgressHUD.show("Đang tải dữ liệu...")
+       
+        
+        
+        let ref = FirRef.ORDERS.queryOrdered(byChild: "status").queryEqual(toValue: ORDER_STATUS.NOTACCEPTED.hashValue)
+        
+        ref.observe(.value, with: { (snapshots) in
+            
+                        print(snapshots)
+            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+                self.orders.removeAll()
+                for orderSnapshot in snapshots{
+                    if let dict = orderSnapshot.value as? [String:Any]{
+                        print(dict)
+                        let order = Order(id: orderSnapshot.key, data: dict)
+                        self.orders.append(order)
+                    }
+                    
+                }
+                ProgressHUD.dismiss()
+                self.tableView.reloadData()
+                
+            }
+        })
+
+    }
+    
+    
     @IBAction func newBtn_TouchInside(_ sender: Any) {
-        fetchOrders(orderStatus: ORDER_STATUS.NOTACCEPTED.hashValue)
+        fetchNewOrders()
     }
     @IBAction func ongoingBtn(_ sender: Any) {
         fetchOrders(orderStatus: ORDER_STATUS.ONGOING.hashValue)

@@ -31,7 +31,7 @@ class UserApi{
         
         
         
-        FirRef.CUSTOMERS.child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        FirRef.SUPPLIERS.child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snap = snapshot.value as? [String:Any]{
                 if let imgUrl = snap["avatarUrl"] as? String{
                     self.downloadImage(imgUrl: imgUrl, onError: { (error) in
@@ -71,7 +71,7 @@ class UserApi{
         guard let user = FIRAuth.auth()?.currentUser else {
             return
         }
-        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["phone": phone])
+        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["phone": phone])
         
         onSuccess()
     }
@@ -80,7 +80,7 @@ class UserApi{
         guard let user = FIRAuth.auth()?.currentUser else {
             return
         }
-        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["name": name])
+        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["name": name])
         
         onSuccess()
     }
@@ -93,7 +93,7 @@ class UserApi{
             return
         }
         
-        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["email": email])
+        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["email": email])
         
         FIRAuth.auth()?.currentUser?.updateEmail(email, completion: { (callback) in
             if callback != nil {
@@ -130,7 +130,7 @@ class UserApi{
             let metadata = FIRStorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            FirRef.CUSTOMER_AVATAR.child(imgUid).put(imgData, metadata: metadata, completion: { (metaData, error) in
+            FirRef.SUPPLIER_LOGO.child(imgUid).put(imgData, metadata: metadata, completion: { (metaData, error) in
                 if error != nil{
                     onError(error.debugDescription)
                 }else{
@@ -179,7 +179,7 @@ class UserApi{
             return
         }
         
-        FirRef.CUSTOMERS.child(user.uid).observe(.value, with: { (snapshot) in
+        FirRef.SUPPLIERS.child(user.uid).observe(.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:Any]{
                 guard let phone = dict["phone"] as? String else{
                     return
@@ -216,14 +216,14 @@ class UserApi{
                 FirRef.USERS.child(userId).observeSingleEvent(of: .value, with: {snapshot in
                     if let userData = snapshot.value as? Dictionary<String,Any>{
                         print(userData)
-                        if let _ = userData["customer"]{
+                        if let _ = userData["supplier"]{
                             
                             onSuccess()
                         }
-                        if let supplier = userData["supplier"]{
-                            print(supplier)
+                        if let customer = userData["customer"]{
+                            print(customer)
                             
-                            onError("Tài khoản của bạn là tài khoản nhà cung cấp, vui lòng sử dụng ứng dụng \(APP_NAME) Supplier")
+                            onError("Tài khoản của bạn là tài khoản khách hàng, vui lòng sử dụng ứng dụng \(APP_NAME)")
                             
                         }
                     }
@@ -241,12 +241,12 @@ class UserApi{
     
     func createFirebaseDBCutomer(uid : String, userData : Dictionary<String, String>  ){
         
-        FirRef.CUSTOMERS.child(uid).updateChildValues(userData)
+        FirRef.SUPPLIERS.child(uid).updateChildValues(userData)
         
         
         
         let currentTime = getCurrentTime()
-        FirRef.USERS.child(uid).updateChildValues(["customer" : true,
+        FirRef.USERS.child(uid).updateChildValues(["supplier" : true,
                                                    "created_at" : currentTime])
     }
     
