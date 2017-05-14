@@ -141,7 +141,7 @@ class UserApi{
         }
     }
     
-    func signUp(name: String, email: String, password: String, phone: String, avatarImg: UIImage, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
+    func signUp(name: String, email: String, password: String, phone: String, address: String, avatarImg: UIImage, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
         
         uploadAvatar(avatarImg: avatarImg, onSuccess: { (imgUrl) in
             
@@ -149,16 +149,17 @@ class UserApi{
                 
                 if error != nil{
                     
-                    let errorDetail = (error as! NSError).localizedDescription
+                  
                     
-                    onError(errorDetail)
+                    onError((error?.localizedDescription)!)
                 }
                 if let user = user{
                     let userData = [
                         "name" : name,
                         "email" : email,
                         "phone" : phone,
-                        "avatarUrl" : imgUrl
+                        "avatarUrl" : imgUrl,
+                        "address": address
                     ]
                     
                     self.createFirebaseDBCutomer(uid: user.uid, userData: userData)
@@ -201,9 +202,9 @@ class UserApi{
     func login( email: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void ) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil{
-                let errorDetail = (error as! NSError).localizedDescription
                 
-                onError(errorDetail)
+                
+                onError((error?.localizedDescription)!)
                 
             }else{
                 print("Login successfully!")

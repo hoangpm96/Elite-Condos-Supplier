@@ -28,8 +28,10 @@ class HomeVC: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        let currenId = Api.User.currentUid()
+        
         ProgressHUD.show("Đang tải dữ liệu...")
-        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
+        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
             print(snapshots)
             
             if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
@@ -63,9 +65,9 @@ class HomeVC: UIViewController {
     // MARK: Functions
     
     func fetchOrders(orderStatus: Int){
-        
+         let currenId = Api.User.currentUid()
         ProgressHUD.show("Đang tải dữ liệu...")
-        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
+        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
             print(snapshots)
             
             if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
@@ -181,25 +183,25 @@ extension HomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as!
         OrderCell
-        cell.delegate = self
+//        cell.delegate = self
         cell.order = orders[indexPath.row]
         return cell
     }
     
     
 }
-
-extension HomeVC: OrderCellDelegate{
-    
-    func moveToDetail(orderId: String) {
-        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
-    }
-//    func denyOrder(orderId: String) {
-//        Api.Order.denyOrder(at: orderId) { 
-//            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
-//        }
-//        print(ORDER_STATUS.CANCEL.hashValue)
-//    }
-    
-}
+//
+//extension HomeVC: OrderCellDelegate{
+//    
+////    func moveToDetail(orderId: String) {
+////        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
+////    }
+////    func denyOrder(orderId: String) {
+////        Api.Order.denyOrder(at: orderId) { 
+////            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
+////        }
+////        print(ORDER_STATUS.CANCEL.hashValue)
+////    }
+//    
+//}
 
