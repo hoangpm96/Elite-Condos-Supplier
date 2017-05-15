@@ -27,13 +27,13 @@ class OrderCell: UITableViewCell {
     
     var order: Order?{
         didSet{
-            print("truoc")
+            print("sau")
             updateView()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("sau")
+        print("truoc")
         // Initialization code
         
        
@@ -49,9 +49,9 @@ class OrderCell: UITableViewCell {
         customerAddressLbl.text = order?.serviceName
         orderIdLbl.text = "# \((order?.id)!)"
         
-        
-        timeLbl.text = order?.time
-        
+        if order?.time != nil {
+            timeLbl.text = getTimeStringFrom(str: (order?.time)!)
+        }
         
         Api.Order.getCustomerName(id: (order?.customerId)!) { (name) in
             self.customerNameLbl.text  = name

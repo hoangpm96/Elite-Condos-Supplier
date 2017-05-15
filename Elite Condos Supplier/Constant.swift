@@ -29,14 +29,22 @@ let USER_ID = "USER_ID"
 var userId = ""
 //Fuctions:
 func getCurrentTime() -> String{
-    let date = Date()
-    
     let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .long
-    dateFormatter.timeStyle = .medium
-    let dateStr = dateFormatter.string(from: date)
-    return dateStr
+    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+    let dateInFormat = dateFormatter.string(from: Date())
+    return dateInFormat
 }
+
+func getTimeStringFrom(str: String) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy HH:mm"
+    let date = formatter.date(from: str)
+    let dateInFormat = formatter.string(from: date ?? Date())
+    return dateInFormat
+    
+    
+}
+
 
 enum ORDER_STATUS{
     case NOTACCEPTED
