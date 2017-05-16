@@ -33,7 +33,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ze0-3c-bNt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k13-V5-k2g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hiện tại không có đơn hàng nào" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-qm-BSi">
@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP8-29-Jhn">
-                                <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-sD-G5l">
                                         <rect key="frame" x="0.0" y="10" width="320" height="40"/>
@@ -106,7 +106,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="191" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-5y-cJ2">
-                                <rect key="frame" x="0.0" y="124" width="320" height="356"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="356"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="191" id="fLc-dl-c5U" customClass="OrderCell" customModule="Elite_Condos_Supplier" customModuleProvider="target">
@@ -199,6 +199,7 @@
                             <constraint firstItem="Ze0-3c-bNt" firstAttribute="top" secondItem="BEc-5y-cJ2" secondAttribute="bottom" id="vJR-cS-IXp"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Đơn hàng" id="DjD-M9-R7B">
                         <barButtonItem key="leftBarButtonItem" image="icon_menu_24dp" id="sdf-jC-EYo"/>
                     </navigationItem>
@@ -207,11 +208,30 @@
                         <outlet property="noOrderLbl" destination="t5m-qm-BSi" id="Wol-uw-BwH"/>
                         <outlet property="tableView" destination="BEc-5y-cJ2" id="AqJ-C1-RZX"/>
                         <segue destination="iHi-Li-Vq1" kind="show" identifier="HomeToPriceTag" id="6Nv-dV-PhK"/>
+                        <segue destination="gYk-cO-4Ib" kind="show" id="O2Z-4S-fzp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoG-bI-9xF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3189.375" y="2148.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hac-zv-DRh">
+            <objects>
+                <viewController id="gYk-cO-4Ib" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AgM-gc-yZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7z-xm-iT7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dD6-gE-ywu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8f-j9-QeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2392.5" y="2148.75"/>
         </scene>
         <!--Than toán-->
         <scene sceneID="e9K-JZ-S13">
