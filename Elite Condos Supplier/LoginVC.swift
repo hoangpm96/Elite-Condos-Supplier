@@ -81,7 +81,9 @@ class LoginVC: UIViewController , UITextFieldDelegate {
         passwordTF.resignFirstResponder()
         return true
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     func showAlert(title: String, message : String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

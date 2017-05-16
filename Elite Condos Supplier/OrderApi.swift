@@ -49,7 +49,8 @@ class OrderApi{
     
     // accept order
     func acceptOrder(at id: String, onSuccess: @escaping () -> Void ){
-        FirRef.ORDERS.child(id).updateChildValues(["status": 1])
+        let currentId = Api.User.currentUid()
+        FirRef.ORDERS.child(id).updateChildValues(["status": ORDER_STATUS.ONGOING.hashValue, "supplierId": currentId])
         onSuccess()
     }
     

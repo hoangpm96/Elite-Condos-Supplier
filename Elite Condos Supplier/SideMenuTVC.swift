@@ -20,7 +20,7 @@ class SideMenuTVC: UITableViewController {
         
       
         
-        configureActionForCell()
+//        configureActionForCell()
         let currentId = Api.User.currentUid()
         FirRef.SUPPLIERS.child(currentId).observeSingleEvent(of: .value, with: {
             snapshot in
@@ -54,16 +54,16 @@ class SideMenuTVC: UITableViewController {
         })
 
     }
-    func configureActionForCell(){
-//        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
-//        employeeCell.addGestureRecognizer(employeeTapped)
-//        employeeCell.isUserInteractionEnabled = true
+//    func configureActionForCell(){
+////        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
+////        employeeCell.addGestureRecognizer(employeeTapped)
+////        employeeCell.isUserInteractionEnabled = true
+////        
+//        let statisticsTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
+//        statisticsCell.addGestureRecognizer(statisticsTapped)
+//        statisticsCell.isUserInteractionEnabled = true
 //        
-        let statisticsTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
-        statisticsCell.addGestureRecognizer(statisticsTapped)
-        statisticsCell.isUserInteractionEnabled = true
-        
-    }
+//    }
     func showBetaMessage(){
        showAlert(title: APP_NAME, message: "Oops, Tính năng đang được xây dựng!")
     }

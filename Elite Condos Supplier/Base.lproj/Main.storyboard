@@ -130,42 +130,8 @@
                                             <segue destination="N0c-KN-quH" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="kLf-NO-ztj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="LIJ-4X-1Nh">
-                                        <rect key="frame" x="0.0" y="310" width="320" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LIJ-4X-1Nh" id="ts9-uO-DiU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar-chart" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-QZ-4Vq">
-                                                    <rect key="frame" x="15" y="25" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="9wI-dS-7CG"/>
-                                                        <constraint firstAttribute="width" constant="30" id="tC9-7M-oXF"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thống Kê" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFl-sf-0t1">
-                                                    <rect key="frame" x="65" y="30" width="235" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="lkO-vq-foc"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="18"/>
-                                                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="X2m-QZ-4Vq" firstAttribute="centerY" secondItem="ts9-uO-DiU" secondAttribute="centerY" id="RvZ-gh-uz5"/>
-                                                <constraint firstAttribute="trailing" secondItem="UFl-sf-0t1" secondAttribute="trailing" constant="20" id="WKQ-21-tyT"/>
-                                                <constraint firstItem="UFl-sf-0t1" firstAttribute="leading" secondItem="X2m-QZ-4Vq" secondAttribute="trailing" constant="20" id="Yk6-uU-Gge"/>
-                                                <constraint firstItem="X2m-QZ-4Vq" firstAttribute="leading" secondItem="ts9-uO-DiU" secondAttribute="leading" constant="15" id="ZCg-3U-2gt"/>
-                                                <constraint firstItem="UFl-sf-0t1" firstAttribute="centerY" secondItem="ts9-uO-DiU" secondAttribute="centerY" id="lqP-0c-wtv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.19215686269999999" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="k1j-Ht-PmR">
-                                        <rect key="frame" x="0.0" y="390" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="310" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k1j-Ht-PmR" id="gZL-Bw-t9B">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -202,7 +168,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="Fia-j9-i0W">
-                                        <rect key="frame" x="0.0" y="470" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="390" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fia-j9-i0W" id="4nn-fh-xGW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -256,7 +222,6 @@
                     <connections>
                         <outlet property="logoImage" destination="eyH-vH-Euc" id="y7z-Qw-ZuE"/>
                         <outlet property="serviceNameLbl" destination="i24-8y-vXV" id="9qI-B0-Mu4"/>
-                        <outlet property="statisticsCell" destination="LIJ-4X-1Nh" id="AEg-Hd-V9R"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1I-Nn-VFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="169"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iyb-hu-40g" id="liP-i3-GQC">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="168.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ish-kv-AP6">
@@ -458,7 +423,6 @@
     </scenes>
     <resources>
         <image name="avatar-user" width="64" height="64"/>
-        <image name="bar-chart" width="32" height="32"/>
         <image name="controls" width="32" height="32"/>
         <image name="favorites" width="128" height="128"/>
         <image name="icon_menu_24dp" width="24" height="24"/>

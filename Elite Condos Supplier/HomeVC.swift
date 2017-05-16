@@ -15,7 +15,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var noOrderLbl: UILabel!
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
-    
     var orders = [Order]()
     var isOnGoingClicked = true
     override func viewDidLoad() {
@@ -28,32 +27,35 @@ class HomeVC: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        ProgressHUD.show("Đang tải dữ liệu...")
-        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
-            print(snapshots)
-            
-            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
-                self.orders.removeAll()
-                for orderSnapshot in snapshots{
-                    if let dict = orderSnapshot.value as? [String:Any]{
-                        print(dict)
-                        if let status = dict["status"] as? Int{
-                            if status == 0 {
-                                print("alo \(status)")
-                                let order = Order(id: orderSnapshot.key, data: dict)
-                                self.orders.append(order)
-                            }
-                        }
-                    }
-                    
-                }
-                ProgressHUD.dismiss()
-                self.tableView.reloadData()
-            }
-            
-            
-            
-        })
+        let currenId = Api.User.currentUid()
+        
+        fetchNewOrders()
+//        ProgressHUD.show("Đang tải dữ liệu...")
+//        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
+//            print(snapshots)
+//            
+//            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+//                self.orders.removeAll()
+//                for orderSnapshot in snapshots{
+//                    if let dict = orderSnapshot.value as? [String:Any]{
+//                        print(dict)
+//                        if let status = dict["status"] as? Int{
+//                            if status == 0 {
+//                                print("alo \(status)")
+//                                let order = Order(id: orderSnapshot.key, data: dict)
+//                                self.orders.append(order)
+//                            }
+//                        }
+//                    }
+//                    
+//                }
+//                ProgressHUD.dismiss()
+//                self.tableView.reloadData()
+//            }
+//            
+//            
+//            
+//        })
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -63,9 +65,11 @@ class HomeVC: UIViewController {
     // MARK: Functions
     
     func fetchOrders(orderStatus: Int){
-        
+         let currenId = Api.User.currentUid()
         ProgressHUD.show("Đang tải dữ liệu...")
-        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: "LYFqRhNNYnNEJS8Ju9zVbc9J1Jk2").observe(.value, with: { (snapshots) in
+        
+        
+        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
             print(snapshots)
             
             if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
@@ -92,8 +96,40 @@ class HomeVC: UIViewController {
             
         })
     }
+    
+    
+    func fetchNewOrders(){
+        
+        ProgressHUD.show("Đang tải dữ liệu...")
+       
+        
+        
+        let ref = FirRef.ORDERS.queryOrdered(byChild: "status").queryEqual(toValue: ORDER_STATUS.NOTACCEPTED.hashValue)
+        
+        ref.observe(.value, with: { (snapshots) in
+            
+                        print(snapshots)
+            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
+                self.orders.removeAll()
+                for orderSnapshot in snapshots{
+                    if let dict = orderSnapshot.value as? [String:Any]{
+                        print(dict)
+                        let order = Order(id: orderSnapshot.key, data: dict)
+                        self.orders.append(order)
+                    }
+                    
+                }
+                ProgressHUD.dismiss()
+                self.tableView.reloadData()
+                
+            }
+        })
+
+    }
+    
+    
     @IBAction func newBtn_TouchInside(_ sender: Any) {
-        fetchOrders(orderStatus: ORDER_STATUS.NOTACCEPTED.hashValue)
+        fetchNewOrders()
     }
     @IBAction func ongoingBtn(_ sender: Any) {
         fetchOrders(orderStatus: ORDER_STATUS.ONGOING.hashValue)
@@ -181,25 +217,25 @@ extension HomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as!
         OrderCell
-        cell.delegate = self
+//        cell.delegate = self
         cell.order = orders[indexPath.row]
         return cell
     }
     
     
 }
-
-extension HomeVC: OrderCellDelegate{
-    
-    func moveToDetail(orderId: String) {
-        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
-    }
-//    func denyOrder(orderId: String) {
-//        Api.Order.denyOrder(at: orderId) { 
-//            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
-//        }
-//        print(ORDER_STATUS.CANCEL.hashValue)
-//    }
-    
-}
+//
+//extension HomeVC: OrderCellDelegate{
+//    
+////    func moveToDetail(orderId: String) {
+////        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
+////    }
+////    func denyOrder(orderId: String) {
+////        Api.Order.denyOrder(at: orderId) { 
+////            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
+////        }
+////        print(ORDER_STATUS.CANCEL.hashValue)
+////    }
+//    
+//}
 

@@ -15,7 +15,7 @@ protocol OrderCellDelegate{
 }
 class OrderCell: UITableViewCell {
     
-    @IBOutlet weak var detailButton: FancyBtn!
+//    @IBOutlet weak var detailButton: FancyBtn!
     @IBOutlet weak var orderIdLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var customerAvatarImg: CircleImage!
@@ -27,13 +27,13 @@ class OrderCell: UITableViewCell {
     
     var order: Order?{
         didSet{
-            print("truoc")
+            print("sau")
             updateView()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("sau")
+        print("truoc")
         // Initialization code
         
        
@@ -49,6 +49,10 @@ class OrderCell: UITableViewCell {
         customerAddressLbl.text = order?.serviceName
         orderIdLbl.text = "# \((order?.id)!)"
         
+        if order?.time != nil {
+            timeLbl.text = getTimeStringFrom(str: (order?.time)!)
+        }
+        
         Api.Order.getCustomerName(id: (order?.customerId)!) { (name) in
             self.customerNameLbl.text  = name
         }
@@ -60,9 +64,9 @@ class OrderCell: UITableViewCell {
     }
 
     
-    @IBAction func detail_TouchInside(_ sender: Any) {
-        delegate?.moveToDetail(orderId: (order?.id)!)
-    }
+//    @IBAction func detail_TouchInside(_ sender: Any) {
+//        delegate?.moveToDetail(orderId: (order?.id)!)
+//    }
     
     
 }

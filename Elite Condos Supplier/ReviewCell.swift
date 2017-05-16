@@ -27,7 +27,11 @@ class ReviewCell: UITableViewCell {
         profileImage.layer.cornerRadius = 15.0
     }
     func updateView(){
-        timeLbl.text = review?.time
+        
+        if review?.time != nil {
+            timeLbl.text = getTimeStringFrom(str: (review?.time)!)
+        }
+        
         reviewContentTextView.text = review?.reviewContent
        
         if let money = review?.moneyAmount {
@@ -44,11 +48,6 @@ class ReviewCell: UITableViewCell {
             let url = URL(string: imgUrl)
              profileImage.sd_setImage(with: url)
         }
-        
-    
-        
-        
-        
     }
 
 

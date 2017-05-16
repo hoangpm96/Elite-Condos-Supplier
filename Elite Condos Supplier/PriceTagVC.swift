@@ -109,6 +109,7 @@ class PriceTagVC: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
+  
     
 }
 
