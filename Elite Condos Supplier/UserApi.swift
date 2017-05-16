@@ -31,7 +31,7 @@ class UserApi{
         
         
         
-        FirRef.SUPPLIERS.child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        FirRef.CUSTOMERS.child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snap = snapshot.value as? [String:Any]{
                 if let imgUrl = snap["avatarUrl"] as? String{
                     self.downloadImage(imgUrl: imgUrl, onError: { (error) in
@@ -71,7 +71,7 @@ class UserApi{
         guard let user = FIRAuth.auth()?.currentUser else {
             return
         }
-        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["phone": phone])
+        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["phone": phone])
         
         onSuccess()
     }
@@ -80,7 +80,7 @@ class UserApi{
         guard let user = FIRAuth.auth()?.currentUser else {
             return
         }
-        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["name": name])
+        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["name": name])
         
         onSuccess()
     }
@@ -93,7 +93,7 @@ class UserApi{
             return
         }
         
-        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["email": email])
+        FirRef.CUSTOMERS.child(user.uid).updateChildValues(["email": email])
         
         FIRAuth.auth()?.currentUser?.updateEmail(email, completion: { (callback) in
             if callback != nil {
@@ -130,7 +130,7 @@ class UserApi{
             let metadata = FIRStorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            FirRef.SUPPLIER_LOGO.child(imgUid).put(imgData, metadata: metadata, completion: { (metaData, error) in
+            FirRef.CUSTOMER_AVATAR.child(imgUid).put(imgData, metadata: metadata, completion: { (metaData, error) in
                 if error != nil{
                     onError(error.debugDescription)
                 }else{
@@ -141,7 +141,7 @@ class UserApi{
         }
     }
     
-    func signUp(name: String, email: String, password: String, phone: String, address: String, avatarImg: UIImage, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
+    func signUp(name: String, email: String, password: String, phone: String, avatarImg: UIImage, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void){
         
         uploadAvatar(avatarImg: avatarImg, onSuccess: { (imgUrl) in
             
@@ -149,17 +149,16 @@ class UserApi{
                 
                 if error != nil{
                     
-                  
+                    let errorDetail = (error as! NSError).localizedDescription
                     
-                    onError((error?.localizedDescription)!)
+                    onError(errorDetail)
                 }
                 if let user = user{
                     let userData = [
                         "name" : name,
                         "email" : email,
                         "phone" : phone,
-                        "avatarUrl" : imgUrl,
-                        "address": address
+                        "avatarUrl" : imgUrl
                     ]
                     
                     self.createFirebaseDBCutomer(uid: user.uid, userData: userData)
@@ -179,7 +178,7 @@ class UserApi{
             return
         }
         
-        FirRef.SUPPLIERS.child(user.uid).observe(.value, with: { (snapshot) in
+        FirRef.CUSTOMERS.child(user.uid).observe(.value, with: { (snapshot) in
             if let dict = snapshot.value as? [String:Any]{
                 guard let phone = dict["phone"] as? String else{
                     return
@@ -202,9 +201,9 @@ class UserApi{
     func login( email: String, password: String, onSuccess: @escaping () -> Void, onError: @escaping (String) -> Void ) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil{
+                let errorDetail = (error as! NSError).localizedDescription
                 
-                
-                onError((error?.localizedDescription)!)
+                onError(errorDetail)
                 
             }else{
                 print("Login successfully!")
@@ -216,14 +215,14 @@ class UserApi{
                 FirRef.USERS.child(userId).observeSingleEvent(of: .value, with: {snapshot in
                     if let userData = snapshot.value as? Dictionary<String,Any>{
                         print(userData)
-                        if let _ = userData["supplier"]{
+                        if let _ = userData["customer"]{
                             
                             onSuccess()
                         }
-                        if let customer = userData["customer"]{
-                            print(customer)
+                        if let supplier = userData["supplier"]{
+                            print(supplier)
                             
-                            onError("Tài khoản của bạn là tài khoản khách hàng, vui lòng sử dụng ứng dụng \(APP_NAME)")
+                            onError("Tài khoản của bạn là tài khoản nhà cung cấp, vui lòng sử dụng ứng dụng \(APP_NAME) Supplier")
                             
                         }
                     }
@@ -241,12 +240,12 @@ class UserApi{
     
     func createFirebaseDBCutomer(uid : String, userData : Dictionary<String, String>  ){
         
-        FirRef.SUPPLIERS.child(uid).updateChildValues(userData)
+        FirRef.CUSTOMERS.child(uid).updateChildValues(userData)
         
         
         
         let currentTime = getCurrentTime()
-        FirRef.USERS.child(uid).updateChildValues(["supplier" : true,
+        FirRef.USERS.child(uid).updateChildValues(["customer" : true,
                                                    "created_at" : currentTime])
     }
     
