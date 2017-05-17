@@ -27,36 +27,9 @@ class HomeVC: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        let currenId = Api.User.currentUid()
         
         fetchNewOrders()
-//        ProgressHUD.show("Đang tải dữ liệu...")
-//        FirRef.ORDERS.queryOrdered(byChild: "supplierId").queryEqual(toValue: currenId).observe(.value, with: { (snapshots) in
-//            print(snapshots)
-//            
-//            if let snapshots = snapshots.children.allObjects as? [FIRDataSnapshot]{
-//                self.orders.removeAll()
-//                for orderSnapshot in snapshots{
-//                    if let dict = orderSnapshot.value as? [String:Any]{
-//                        print(dict)
-//                        if let status = dict["status"] as? Int{
-//                            if status == 0 {
-//                                print("alo \(status)")
-//                                let order = Order(id: orderSnapshot.key, data: dict)
-//                                self.orders.append(order)
-//                            }
-//                        }
-//                    }
-//                    
-//                }
-//                ProgressHUD.dismiss()
-//                self.tableView.reloadData()
-//            }
-//            
-//            
-//            
-//        })
-        
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -151,6 +124,14 @@ class HomeVC: UIViewController {
                 }
             }
         }
+        
+        if segue.identifier == "HomeToOrderDetail"{
+            if let orderDetail = segue.destination as? OrderDetailVC{
+                if let id = sender as? String{
+                    orderDetail.orderId = id
+                }
+            }
+        }
     }
     
 }
@@ -217,25 +198,24 @@ extension HomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as!
         OrderCell
-//        cell.delegate = self
+        cell.delegate = self
         cell.order = orders[indexPath.row]
         return cell
     }
     
+
+}
+extension HomeVC: OrderCellDelegate{
+    
+    func moveToDetail(orderId: String) {
+        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
+    }
+    func denyOrder(orderId: String) {
+        Api.Order.denyOrder(at: orderId) { 
+            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
+        }
+        print(ORDER_STATUS.CANCEL.hashValue)
+    }
     
 }
-//
-//extension HomeVC: OrderCellDelegate{
-//    
-////    func moveToDetail(orderId: String) {
-////        performSegue(withIdentifier: "HomeToOrderDetail", sender: orderId)
-////    }
-////    func denyOrder(orderId: String) {
-////        Api.Order.denyOrder(at: orderId) { 
-////            self.fetchOrders(orderStatus: ORDER_STATUS.CANCEL.hashValue)
-////        }
-////        print(ORDER_STATUS.CANCEL.hashValue)
-////    }
-//    
-//}
 

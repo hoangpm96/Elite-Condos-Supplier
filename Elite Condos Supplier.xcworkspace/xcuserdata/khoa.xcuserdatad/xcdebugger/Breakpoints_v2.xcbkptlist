@@ -26,59 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Elite Condos Supplier/HomeVC.swift"
-            timestampString = "516352034.916733"
+            timestampString = "516414196.186233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Elite Condos Supplier/HomeVC.swift"
-            timestampString = "516351303.09332"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "denyOrder(orderId:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Elite_Condos_Supplier.HomeVC.viewDidLoad () -&gt; ()"
-                  moduleName = "Elite Condos Supplier"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/khoa/Documents/DATA/Projects/Elite%20Condos%20Supplier/Elite%20Condos%20Supplier/HomeVC.swift"
-                  timestampString = "513912478.557925"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1440">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Elite_Condos_Supplier.HomeVC.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "Elite Condos Supplier"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/khoa/Documents/DATA/Projects/Elite%20Condos%20Supplier/Elite%20Condos%20Supplier/HomeVC.swift"
-                  timestampString = "513912478.561781"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,6 +112,22 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "updateView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Elite Condos Supplier/UserApi.swift"
+            timestampString = "516419618.039793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getUserLocation(userId:onSuccess:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -64,9 +64,9 @@ class OrderCell: UITableViewCell {
     }
 
     
-//    @IBAction func detail_TouchInside(_ sender: Any) {
-//        delegate?.moveToDetail(orderId: (order?.id)!)
-//    }
+    @IBAction func detail_TouchInside(_ sender: Any) {
+        delegate?.moveToDetail(orderId: (order?.id)!)
+    }
     
     
 }

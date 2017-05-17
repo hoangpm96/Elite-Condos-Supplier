@@ -24,6 +24,25 @@ class UserApi{
         
     }
     
+    
+    
+    
+    func getUserLocation(userId: String, onSuccess: @escaping (Double,Double) -> Void){
+        FirRef.USERS.child(userId).child("locations").observe(.value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String:Double]{
+                if let lat = dict["lat"], let long = dict["long"] {
+                    onSuccess(lat,long)
+                }
+            
+                
+            }
+        })
+        
+        
+        
+    }
+    
+    
     func downloadUserImage(onError: @escaping (String) -> Void, onSuccess: @escaping (UIImage) -> Void){
         guard let user = FIRAuth.auth()?.currentUser else {
             return

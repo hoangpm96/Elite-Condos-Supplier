@@ -17,6 +17,14 @@ class Order  {
     private var _employeeId : String!
     private var _status : Int!
     private var _time: String!
+    private var _description: String!
+    var imgUrls: [String]?
+    
+    
+   
+    var description: String{
+        return _description
+    }
     
     var time: String{
         return _time
@@ -44,6 +52,7 @@ class Order  {
     
     init(id : String, data : Dictionary<String,Any>) {
         self._id = id
+        self.imgUrls = [String]()
         if let customerId = data["customerId"] as? String{
             self._customerId = customerId
         }
@@ -65,6 +74,15 @@ class Order  {
         if let time = data["created_at"] as? String{
             self._time = time
         }
+        if let description = data["description"] as? String{
+            self._description = description
+        }
+        
+        if let imageUrls = data["imgUrls"] as? String{
+            
+            self.imgUrls = imageUrls.components(separatedBy: ",")
+        }
+        
     }
     
 }
