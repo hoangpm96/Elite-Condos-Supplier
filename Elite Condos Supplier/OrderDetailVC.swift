@@ -11,6 +11,8 @@ import ProgressHUD
 import MapKit
 class OrderDetailVC: UIViewController {
     
+    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var denyButton: UIButton!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var orderId = ""
@@ -29,7 +31,10 @@ class OrderDetailVC: UIViewController {
         
         Api.Order.observeOrders(orderId: orderId) { (order) in
             self.descriptionLbl.text = order.description
-            
+            if order.status != ORDER_STATUS.NOTACCEPTED.hashValue {
+                self.denyButton.isHidden = true
+                self.acceptButton.isHidden = true
+            }
             
             if let imgUrls = order.imgUrls{
                 self.imageUrls = imgUrls

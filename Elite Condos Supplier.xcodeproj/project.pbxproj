@@ -39,6 +39,8 @@
 		D27C63A11DDC36EC00B705CB /* SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */; };
 		D27C63A31DDC398300B705CB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C63A21DDC398300B705CB /* HomeVC.swift */; };
 		D283ED231EC7DBCE0008451F /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283ED221EC7DBCE0008451F /* OrderDetailCell.swift */; };
+		D283ED251EC7F88E0008451F /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283ED241EC7F88E0008451F /* AccountVC.swift */; };
+		D283ED271EC7F96E0008451F /* PasswordUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283ED261EC7F96E0008451F /* PasswordUpdateVC.swift */; };
 		D28932501E703FB4001816AA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289324F1E703FB4001816AA /* AuthService.swift */; };
 		D28932521E703FD6001816AA /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28932511E703FD6001816AA /* UserApi.swift */; };
 		D28932561E70402A001816AA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28932551E70402A001816AA /* Api.swift */; };
@@ -106,6 +108,8 @@
 		D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTVC.swift; sourceTree = "<group>"; };
 		D27C63A21DDC398300B705CB /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D283ED221EC7DBCE0008451F /* OrderDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		D283ED241EC7F88E0008451F /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		D283ED261EC7F96E0008451F /* PasswordUpdateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordUpdateVC.swift; sourceTree = "<group>"; };
 		D289324F1E703FB4001816AA /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D28932511E703FD6001816AA /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		D28932551E70402A001816AA /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 		D29967F81DCA292900D1A2B5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D283ED241EC7F88E0008451F /* AccountVC.swift */,
+				D283ED261EC7F96E0008451F /* PasswordUpdateVC.swift */,
 				D27C63A01DDC36EC00B705CB /* SideMenuTVC.swift */,
 				D27C63A21DDC398300B705CB /* HomeVC.swift */,
 				D27C639E1DDC308B00B705CB /* SignUpVC.swift */,
@@ -497,6 +503,7 @@
 				D23ECC161DF1A9F2002B6E1D /* CosmosDistrib.swift in Sources */,
 				D2A25F001E7177E0008DE38A /* FirRef.swift in Sources */,
 				D25556CF1DDA7A88004E7649 /* Supplier.swift in Sources */,
+				D283ED271EC7F96E0008451F /* PasswordUpdateVC.swift in Sources */,
 				D2154FBB1DE91D5600D0DF23 /* Order.swift in Sources */,
 				D28EE7CD1DD9731000BCE1E9 /* LoginVC.swift in Sources */,
 				D28EE7CF1DD9762900BCE1E9 /* StartVC.swift in Sources */,
@@ -506,6 +513,7 @@
 				D25556C81DD9C56D004E7649 /* Errors.swift in Sources */,
 				D25556C41DD9B9C4004E7649 /* DataService.swift in Sources */,
 				D21D704A1E7D7D6C005BB528 /* ServiceCell.swift in Sources */,
+				D283ED251EC7F88E0008451F /* AccountVC.swift in Sources */,
 				D28932561E70402A001816AA /* Api.swift in Sources */,
 				D27C63A31DDC398300B705CB /* HomeVC.swift in Sources */,
 				D2E6874B1EA0BDDF001E99B1 /* OrderApi.swift in Sources */,

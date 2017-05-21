@@ -44,15 +44,11 @@ class UserApi{
     
     
     func downloadUserImage(onError: @escaping (String) -> Void, onSuccess: @escaping (UIImage) -> Void){
-        guard let user = FIRAuth.auth()?.currentUser else {
-            return
-        }
         
         
-        
-        FirRef.SUPPLIERS.child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        FirRef.SUPPLIERS.child(currentUid()).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snap = snapshot.value as? [String:Any]{
-                if let imgUrl = snap["avatarUrl"] as? String{
+                if let imgUrl = snap["logoUrl"] as? String{
                     self.downloadImage(imgUrl: imgUrl, onError: { (error) in
                         onError(error)
                     }, onSuccess: { (img) in

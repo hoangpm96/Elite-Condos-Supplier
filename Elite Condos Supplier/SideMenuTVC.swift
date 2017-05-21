@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 class SideMenuTVC: UITableViewController {
-
+    
     @IBOutlet weak var statisticsCell: UITableViewCell!
     @IBOutlet weak var serviceNameLbl: UILabel!
     @IBOutlet weak var logoImage: CircleImage!
@@ -18,9 +18,9 @@ class SideMenuTVC: UITableViewController {
         view.backgroundColor = UIColor(red: 48/255, green: 49/255, blue: 77/255, alpha: 1.0)
         
         
-      
         
-//        configureActionForCell()
+        
+        //        configureActionForCell()
         let currentId = Api.User.currentUid()
         FirRef.SUPPLIERS.child(currentId).observeSingleEvent(of: .value, with: {
             snapshot in
@@ -36,7 +36,7 @@ class SideMenuTVC: UITableViewController {
                     ref.data(withMaxSize: 2 * 1024 * 1024, completion:
                         { data, error in
                             if error != nil{
-                                print("can't download image from Firebase")                  
+                                print("can't download image from Firebase")
                             }else{
                                 
                                 if let data = data {
@@ -52,22 +52,22 @@ class SideMenuTVC: UITableViewController {
                 }
             }
         })
-
+        
     }
-//    func configureActionForCell(){
-////        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
-////        employeeCell.addGestureRecognizer(employeeTapped)
-////        employeeCell.isUserInteractionEnabled = true
-////        
-//        let statisticsTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
-//        statisticsCell.addGestureRecognizer(statisticsTapped)
-//        statisticsCell.isUserInteractionEnabled = true
-//        
-//    }
+    //    func configureActionForCell(){
+    ////        let employeeTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
+    ////        employeeCell.addGestureRecognizer(employeeTapped)
+    ////        employeeCell.isUserInteractionEnabled = true
+    ////
+    //        let statisticsTapped = UITapGestureRecognizer(target: self, action: #selector(self.showBetaMessage))
+    //        statisticsCell.addGestureRecognizer(statisticsTapped)
+    //        statisticsCell.isUserInteractionEnabled = true
+    //
+    //    }
     func showBetaMessage(){
-       showAlert(title: APP_NAME, message: "Oops, Tính năng đang được xây dựng!")
+        showAlert(title: APP_NAME, message: "Oops, Tính năng đang được xây dựng!")
     }
-
+    
     
     func showAlert(title: String, message : String){
         
@@ -80,7 +80,17 @@ class SideMenuTVC: UITableViewController {
         present(alert, animated: true, completion: nil)
         
     }
-
+    
+    
+    @IBAction func goToUserSettings(_ sender: Any) {
+        
+        performSegue(withIdentifier: "MenuToUserSettings", sender: nil)
+    
+        
+        
+    }
+    
+    
     
     @IBAction func logoutBtn(_ sender: Any) {
         
@@ -90,10 +100,10 @@ class SideMenuTVC: UITableViewController {
             let startVC = storyboard.instantiateViewController(withIdentifier: "StartVC")
             
             present(startVC, animated: true, completion: nil)
-
+            
         }) { (error) in
             print("error")
         }
         
-}
+    }
 }
