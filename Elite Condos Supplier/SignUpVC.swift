@@ -47,7 +47,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        ProgressHUD.show("Đang đăng ký")
+        
         guard let name = nameLbl.text, name != "" else {
             showAlert(title: SIGN_UP_ERROR, message: SIGN_UP_ERROR_NAME)
             return
@@ -68,6 +68,8 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             showAlert(title: "Lỗi", message: "Vui lòng chọn logo")
             return
         }
+        
+        ProgressHUD.show("Đang đăng ký")
         Api.User.signUp(name: name, email: email, password: password, phone: phone, address: address,  avatarImg: logoImage.image!, onSuccess: {
             ProgressHUD.dismiss()
             let alert = UIAlertController(title: APP_NAME, message: "Đăng ký thành công!", preferredStyle: .alert)
@@ -80,7 +82,8 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }) { (error) in
-            print(error)
+            ProgressHUD.dismiss()
+            self.showAlert(title: "Lỗi đăng ký", message: error)
         }
         
     }

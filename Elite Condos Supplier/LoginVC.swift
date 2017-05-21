@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ProgressHUD
 class LoginVC: UIViewController , UITextFieldDelegate {
 
     @IBOutlet weak var passwordTF: FancyField!
@@ -17,11 +18,12 @@ class LoginVC: UIViewController , UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
-
-    
     @IBAction func loginButton(_ sender: Any) {
+        
+        
         guard let email = emailTF.text, email != "" else {
             showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_EMAIL)
             return
@@ -30,50 +32,16 @@ class LoginVC: UIViewController , UITextFieldDelegate {
             showAlert(title: SIGN_IN_ERROR, message: SIGN_IN_ERROR_PASSWORD)
             return
         }
-//        let email = "thoviet@gmail.com"
-//        let password = "123456"
-//        self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
-        AuthService.login(email: email, password: password, onSuccess: { 
+        
+        ProgressHUD.show("Logging...")
+        AuthService.login(email: email, password: password, onSuccess: {
+            ProgressHUD.showSuccess("✓")
             self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
             
         }) { (errorDetail) in
+            ProgressHUD.dismiss()
             self.showAlert(title: APP_NAME, message: errorDetail)
-            
         }
-        
-        
-//        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-//            if error != nil{
-//                let errorDetail = (error as! NSError).localizedDescription
-//                self.showAlert(title: SIGN_IN_ERROR, message: errorDetail)
-//            }else{
-//                print("Login successfully!")
-//                UserDefaults.standard.setValue(user?.uid, forKey: USER_ID)
-//         
-//                
-//                let id = user?.uid
-//                userId = id!
-//                DataService.ds.REF_USERS.child(id!).observeSingleEvent(of: .value, with: {snapshot in
-//                    if let userData = snapshot.value as? Dictionary<String,Any>{
-//                        print(userData)
-//                        
-//                        if userData["customer"] != nil{
-//                            self.showAlert(title: APP_NAME, message: "Tài khoản của bạn là khách hàng, vui lòng xử dụng ứng Elite Condos!")
-//                        }
-//                        
-//                        if let supplier = userData["supplier"]{
-//                            print(supplier)
-//                            self.performSegue(withIdentifier: "LoginToSupplierHome", sender: nil)
-//                            
-//                        }
-//                        
-//                    }
-//                }
-//                )
-//            }
-//        })
-//        
-        
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

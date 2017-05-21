@@ -107,17 +107,27 @@ class UserApi{
         guard let user = FIRAuth.auth()?.currentUser else {
             return
         }
-        
-        FirRef.SUPPLIERS.child(user.uid).updateChildValues(["email": email])
-        
         FIRAuth.auth()?.currentUser?.updateEmail(email, completion: { (callback) in
             if callback != nil {
                 onError((callback?.localizedDescription)!)
                 return
+            } else {
+                FirRef.SUPPLIERS.child(user.uid).updateChildValues(["email": email])
+             onSuccess()
             }
             
         })
-        onSuccess()
+        
+    }
+    
+    func updateAvatar(image: UIImage,onSuccess: @escaping (String) -> Void, onError: @escaping (String) -> Void ){
+        
+        uploadAvatar(avatarImg: image, onSuccess: { (imageUrl) in
+         FirRef.SUPPLIERS.child(Api.User.currentUid()).updateChildValues(["logoUrl": imageUrl])
+            
+        }, onError: onError)
+        
+        
     }
     
     func updatePassword(password: String, onError: @escaping (String) -> Void){

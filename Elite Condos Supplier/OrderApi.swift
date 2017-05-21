@@ -43,7 +43,7 @@ class OrderApi{
     
     // accept order
     func cancelOrder(at id: String, onSuccess: @escaping () -> Void ){
-        FirRef.ORDERS.child(id).updateChildValues(["status": 3])
+        FirRef.ORDERS.child(id).updateChildValues(["status": ORDER_STATUS.CANCEL.hashValue])
         onSuccess()
     }
     
@@ -59,7 +59,7 @@ class OrderApi{
 //        let currentId = Api.User.currentUid()
 //        FirRef.ORDERS.child(id).removeValue()
 //        FirRef.SUPPLIER_ORDERS.child(currentId).child(id).removeValue()
-        FirRef.ORDERS.child(id).updateChildValues(["status": 4])
+        FirRef.ORDERS.child(id).updateChildValues(["status": ORDER_STATUS.CANCEL.hashValue])
         onSuccess()
     }
     
