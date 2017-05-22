@@ -86,6 +86,8 @@ class PriceTagVC: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {
             action in
+            self.priceTF.text = ""
+            self.tagNameTF.text = ""
             self.tableView.reloadData()
             self.calulateTotal()
             

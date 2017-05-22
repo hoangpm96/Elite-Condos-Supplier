@@ -2,13 +2,24 @@
 //  UserApi.swift
 //  Elite Condos Supplier
 //
-//  Created by Khoa on 3/8/17.
-//  Copyright © 2017 Khoa. All rights reserved.
+//  Created by Hien on 3/8/17.
+//  Copyright © 2017 Hien. All rights reserved.
 //
 
 import Foundation
 import Firebase
 class UserApi{
+    
+    
+    
+    // update user token
+    func updateTokenToDatabase(token: String, onSuccess: @escaping () -> Void){
+        if let user = FIRAuth.auth()?.currentUser {
+            FirRef.SUPPLIERS.child(user.uid).updateChildValues(["token": token])
+            onSuccess()
+        }
+    }
+    
     
     var CURRENT_USER: FIRUser?{
         if let currentUser = FIRAuth.auth()?.currentUser{
@@ -19,7 +30,6 @@ class UserApi{
     func currentUid() -> String{
         
         let currentUser = FIRAuth.auth()?.currentUser
-        
         return (currentUser?.uid)!
         
     }

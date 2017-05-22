@@ -2,8 +2,8 @@
 //  AuthService.swift
 //  Elite Condos Supplier
 //
-//  Created by Khoa on 3/8/17.
-//  Copyright © 2017 Khoa. All rights reserved.
+//  Created by Hien on 3/8/17.
+//  Copyright © 2017 Hien. All rights reserved.
 //
 
 import Foundation
@@ -22,7 +22,6 @@ class AuthService{
                 onError(errorDetail)
             }else{
                 let id = user?.uid
-                userId = id!
                 FirRef.USERS.child(id!).observeSingleEvent(of: .value, with: {snapshot in
                     if let userData = snapshot.value as? Dictionary<String,Any>{
                         print(userData)
